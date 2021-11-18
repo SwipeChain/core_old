@@ -202,7 +202,7 @@ success "Installed system updates!"
 heading "Installing Swipechain Core..."
 
 cd /home/vagrant
-git clone git@github.com:Bsincent/swipechain-explorer.git swipechain-core -b develop
+git clone git@github.com:SwipeChain/swipechain-explorer.git swipechain-core -b develop
 cd swipechain-core
 yarn setup
 

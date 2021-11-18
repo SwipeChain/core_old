@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 rm -rf /home/swipechain/swipechain-core
-git clone git@github.com:Bsincent/swipechain-explorer.git -b upgrade /home/swipechain/swipechain-core
+git clone git@github.com:SwipeChain/swipechain-explorer.git -b upgrade /home/swipechain/swipechain-core
 
 mkdir /home/swipechain/.swipechain
 touch /home/swipechain/.swipechain/.env
