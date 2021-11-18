@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-test-framework",
-    "version": "3.0.5",
+    "version": "3.0.7",
     "description": "Test Framework for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -19,7 +19,7 @@
         "prepublishOnly": "yarn build"
     },
     "dependencies": {
-        "@swipechain/core": "^3.0.5",
+        "@swipechain/core": "^3.0.7",
         "@swipechain/core-api": "^3.0.5",
         "@swipechain/core-blockchain": "^3.0.5",
         "@swipechain/core-cli": "^3.0.5",
