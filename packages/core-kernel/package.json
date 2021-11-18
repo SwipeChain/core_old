@@ -1,7 +1,7 @@
 {
     "name": "@swipechain/core-kernel",
     "description": "Kernel of Swipechain Core",
-    "version": "3.0.1",
+    "version": "3.0.5",
     "contributors": [
         "Swipechain <community@swipe.org>"
     ],
@@ -22,7 +22,7 @@
     },
     "dependencies": {
         "@pm2/io": "^4.3.5",
-        "@swipechain/crypto": "^3.0.1",
+        "@swipechain/crypto": "^3.0.5",
         "@swipechain/utils": "^1.0.2",
         "chalk": "^4.0.0",
         "cron": "^1.7.2",

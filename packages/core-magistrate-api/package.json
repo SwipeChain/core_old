@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-magistrate-api",
-    "version": "3.0.3",
+    "version": "3.0.5",
     "description": "Magistrate API for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -23,11 +23,11 @@
     "dependencies": {
         "@hapi/boom": "^9.0.0",
         "@hapi/hapi": "^20.0.3",
-        "@swipechain/core-api": "^3.0.3",
-        "@swipechain/core-kernel": "^3.0.1",
-        "@swipechain/core-magistrate-crypto": "^3.0.3",
-        "@swipechain/core-magistrate-transactions": "^3.0.3",
-        "@swipechain/crypto": "^3.0.1",
+        "@swipechain/core-api": "^3.0.5",
+        "@swipechain/core-kernel": "^3.0.5",
+        "@swipechain/core-magistrate-crypto": "^3.0.5",
+        "@swipechain/core-magistrate-transactions": "^3.0.5",
+        "@swipechain/crypto": "^3.0.5",
         "joi": "^17.3.0"
     },
     "devDependencies": {

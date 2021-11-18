@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-forger",
-    "version": "3.0.3",
+    "version": "3.0.5",
     "description": "Forger for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -20,10 +20,10 @@
         "pretest": "bash ../../scripts/pre-test.sh"
     },
     "dependencies": {
-        "@swipechain/core-kernel": "^3.0.1",
-        "@swipechain/core-p2p": "^3.0.3",
-        "@swipechain/core-transactions": "^3.0.3",
-        "@swipechain/crypto": "^3.0.1",
+        "@swipechain/core-kernel": "^3.0.5",
+        "@swipechain/core-p2p": "^3.0.5",
+        "@swipechain/core-transactions": "^3.0.5",
+        "@swipechain/crypto": "^3.0.5",
         "joi": "^17.3.0",
         "node-forge": "^0.10.0",
         "wif": "^2.0.6"

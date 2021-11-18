@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-api",
-    "version": "3.0.3",
+    "version": "3.0.5",
     "description": "Public API for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -24,10 +24,10 @@
         "@hapi/boom": "^9.0.0",
         "@hapi/hapi": "^20.0.3",
         "@hapi/hoek": "^9.1.0",
-        "@swipechain/core-database": "^3.0.1",
-        "@swipechain/core-kernel": "^3.0.1",
-        "@swipechain/core-transactions": "^3.0.3",
-        "@swipechain/crypto": "^3.0.1",
+        "@swipechain/core-database": "^3.0.5",
+        "@swipechain/core-kernel": "^3.0.5",
+        "@swipechain/core-transactions": "^3.0.5",
+        "@swipechain/crypto": "^3.0.5",
         "joi": "^17.3.0",
         "nanomatch": "^1.2.13",
         "node-cache": "^5.0.2",

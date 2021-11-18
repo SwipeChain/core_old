@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-p2p",
-    "version": "3.0.3",
+    "version": "3.0.5",
     "description": "P2P API for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -30,10 +30,10 @@
         "@hapi/hoek": "9.x.x",
         "@hapi/sntp": "^4.0.0",
         "@hapi/teamwork": "5.x.x",
-        "@swipechain/core-database": "^3.0.1",
-        "@swipechain/core-kernel": "^3.0.1",
-        "@swipechain/core-state": "^3.0.3",
-        "@swipechain/crypto": "^3.0.1",
+        "@swipechain/core-database": "^3.0.5",
+        "@swipechain/core-kernel": "^3.0.5",
+        "@swipechain/core-state": "^3.0.5",
+        "@swipechain/crypto": "^3.0.5",
         "dayjs": "^1.8.17",
         "delay": "^4.3.0",
         "ip": "^1.1.5",
