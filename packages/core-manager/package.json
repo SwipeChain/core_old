@@ -1,0 +1,64 @@
+{
+    "name": "@swipechain/core-manager",
+    "version": "3.0.3",
+    "description": "Manager for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipe.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@hapi/basic": "^6.0.0",
+        "@hapi/hapi": "^20.0.3",
+        "@hapist/json-rpc": "^0.2.0",
+        "@hapist/whitelist": "^0.1.0",
+        "@sindresorhus/df": "^3.1.1",
+        "@swipechain/core": "^3.0.3",
+        "@swipechain/core-cli": "^3.0.1",
+        "@swipechain/core-kernel": "^3.0.1",
+        "@swipechain/crypto": "^3.0.1",
+        "archiver": "^5.2.0",
+        "argon2": "^0.26.2",
+        "better-sqlite3": "^7.1.2",
+        "dayjs": "^1.9.6",
+        "execa": "^3.4.0",
+        "fs-extra": "^8.1.0",
+        "got": "^11.8.1",
+        "hapi-auth-bearer-token": "^6.1.6",
+        "joi": "^17.3.0",
+        "latest-version": "^5.1.0",
+        "lodash.clonedeep": "^4.5.0",
+        "public-ip": "^4.0.3",
+        "systeminformation": "^5.6.20",
+        "typeorm": "0.2.25"
+    },
+    "devDependencies": {
+        "nock": "^13.0.0",
+        "tmp": "^0.2.0"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "swipechain": {
+        "core": {
+            "alias": "manager"
+        }
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

@@ -1,0 +1,45 @@
+{
+    "name": "@swipechain/core-webhooks",
+    "version": "3.0.3",
+    "description": "Webhooks for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipe.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@hapi/boom": "^9.0.0",
+        "@hapi/hapi": "^20.0.3",
+        "@swipechain/core-kernel": "^3.0.1",
+        "@swipechain/crypto": "^3.0.1",
+        "fs-extra": "^8.1.0",
+        "joi": "^17.3.0",
+        "lowdb": "^1.0.0",
+        "uuid": "^8.0.0"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^8.0.1",
+        "@types/hapi__boom": "^7.4.1",
+        "@types/hapi__joi": "^17.0.0",
+        "@types/uuid": "^8.0.0"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

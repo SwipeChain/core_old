@@ -1,0 +1,46 @@
+{
+    "name": "@swipechain/core-logger-pino",
+    "version": "3.0.1",
+    "description": "Webhooks for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipe.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@swipechain/core-kernel": "^3.0.1",
+        "chalk": "^4.0.0",
+        "joi": "^17.3.0",
+        "pino": "^6.0.0",
+        "pino-pretty": "^4.0.0",
+        "pump": "^3.0.0",
+        "readable-stream": "^3.4.0",
+        "rotating-file-stream": "^2.1.5",
+        "split2": "^3.1.1"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@types/pino": "^6.0.0",
+        "@types/pump": "^1.1.0",
+        "@types/readable-stream": "^2.3.5",
+        "@types/split2": "^2.1.6"
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

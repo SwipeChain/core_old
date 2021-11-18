@@ -1,0 +1,51 @@
+{
+    "name": "@swipechain/core-snapshots",
+    "version": "3.0.3",
+    "description": "Provides live local streamed snapshots functionality for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipe.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build"
+    },
+    "dependencies": {
+        "@swipechain/core-database": "^3.0.1",
+        "@swipechain/core-kernel": "^3.0.1",
+        "@swipechain/crypto": "^3.0.1",
+        "bytebuffer": "^5.0.1",
+        "fs-extra": "^8.1.0",
+        "joi": "^17.3.0",
+        "msgpack-lite": "^0.1.26",
+        "ora": "^4.0.3",
+        "pg-query-stream": "^3.0.4",
+        "pluralize": "^8.0.0",
+        "typeorm": "0.2.25",
+        "xcase": "^2.0.1"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^8.0.1"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "swipechain": {
+        "core": {
+            "alias": "snapshots"
+        }
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

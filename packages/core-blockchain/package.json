@@ -1,0 +1,47 @@
+{
+    "name": "@swipechain/core-blockchain",
+    "version": "3.0.3",
+    "description": "Blockchain Manager for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipe.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@swipechain/core-database": "^3.0.1",
+        "@swipechain/core-kernel": "^3.0.1",
+        "@swipechain/core-state": "^3.0.3",
+        "@swipechain/core-transactions": "^3.0.3",
+        "@swipechain/crypto": "^3.0.1",
+        "joi": "^17.3.0",
+        "xstate": "^4.8.0"
+    },
+    "devDependencies": {
+        "@types/async": "^3.0.3"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "swipechain": {
+        "core": {
+            "alias": "blockchain"
+        }
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

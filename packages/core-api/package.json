@@ -1,0 +1,56 @@
+{
+    "name": "@swipechain/core-api",
+    "version": "3.0.3",
+    "description": "Public API for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipe.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@hapi/boom": "^9.0.0",
+        "@hapi/hapi": "^20.0.3",
+        "@hapi/hoek": "^9.1.0",
+        "@swipechain/core-database": "^3.0.1",
+        "@swipechain/core-kernel": "^3.0.1",
+        "@swipechain/core-transactions": "^3.0.3",
+        "@swipechain/crypto": "^3.0.1",
+        "joi": "^17.3.0",
+        "nanomatch": "^1.2.13",
+        "node-cache": "^5.0.2",
+        "rate-limiter-flexible": "^1.1.6",
+        "semver": "^6.3.0"
+    },
+    "devDependencies": {
+        "@types/hapi__boom": "^7.4.1",
+        "@types/hapi__joi": "^17.0.0",
+        "@types/ip": "^1.1.0",
+        "@types/semver": "^6.2.0",
+        "lodash.clonedeep": "^4.5.0"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "swipechain": {
+        "core": {
+            "alias": "api"
+        }
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

@@ -1,0 +1,50 @@
+version: '2'
+services:
+  postgres:
+    image: "postgres:alpine"
+    container_name: postgres-mainnet
+    restart: always
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+    networks:
+      - core
+    environment:
+     POSTGRES_PASSWORD: password
+     POSTGRES_DB: core_mainnet
+     POSTGRES_USER: node
+
+  core:
+    image: swipechain/core
+    container_name: core-mainnet
+    restart: always
+    ports:
+     - "4001:4001"
+     - "4003:4003"
+     - "4011:4011"
+     - "4021:4021"
+     - "4040:4040"
+     - "127.0.0.1:4004:4004"
+     - "127.0.0.1:8080:8080"
+    cap_add:
+      - SYS_NICE
+      - SYS_RESOURCE
+      - SYS_TIME
+    volumes:
+     - ~/.config/swipechain-core:/home/node/.config/swipechain-core
+     - ~/.local/share/swipechain-core:/home/node/.local/share/swipechain-core
+     - ~/.local/state/swipechain-core:/home/node/.local/state/swipechain-core
+     - /etc/localtime:/etc/localtime:ro
+     - ./enc:/run/secrets
+    networks:
+      - core
+    env_file: ./mainnet.env
+    tty: true
+    links:
+     - postgres
+    depends_on:
+      - postgres
+volumes:
+  postgres:
+  core:
+networks:
+  core:

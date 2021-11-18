@@ -1,0 +1,34 @@
+{
+    "name": "@swipechain/core-transactions",
+    "version": "3.0.3",
+    "description": "Transaction Services for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechian <community@swipe.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build"
+    },
+    "dependencies": {
+        "@swipechain/core-database": "^3.0.1",
+        "@swipechain/core-kernel": "^3.0.1",
+        "@swipechain/crypto": "^3.0.1"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}
