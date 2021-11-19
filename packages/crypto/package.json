@@ -27,7 +27,7 @@
     },
     "dependencies": {
         "@swipechain/crypto-identities": "^1.1.2",
-        "@swipechain/crypto-networks": "^1.2.4",
+        "@swipechain/crypto-networks": "^1.2.6",
         "@swipechain/utils": "^1.0.2",
         "ajv": "^6.10.2",
         "ajv-keywords": "^3.4.1",

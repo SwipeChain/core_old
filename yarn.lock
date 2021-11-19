@@ -4040,10 +4040,10 @@
     fast-memoize "^2.5.1"
     wif "^2.0.6"
 
-"@swipechain/crypto-networks@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@swipechain/crypto-networks/-/crypto-networks-1.2.4.tgz#de5512848699ef684c39804201c639a5d8393bc1"
-  integrity sha512-/QQ4wimZ7JLqD6ppeOWngbHhzl366sApFy0Ele2P1Lx84OQkBS6Cq8VkbIyfazGGqWHWBVfHuib8Modinwtmhw==
+"@swipechain/crypto-networks@^1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@swipechain/crypto-networks/-/crypto-networks-1.2.6.tgz#05d87348d2528030d4312088acd6c1fb25ec9ffa"
+  integrity sha512-o6c6TcBhYYUMN5JqNo8kqG0Vtf7rxTEG7h3qAghFDf50SP8ipZ/gURUU7TDmq+0wcyY83IfdjdtrLxvs2l2Smg==
 
 "@swipechain/utils@^1.0.1":
   version "1.0.1"
