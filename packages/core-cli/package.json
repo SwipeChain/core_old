@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-cli",
-    "version": "3.0.5",
+    "version": "3.1.0",
     "description": "Core of the Swipe Blockchain",
     "license": "MIT",
     "contributors": [
@@ -21,8 +21,8 @@
         "prepublishOnly": "yarn build"
     },
     "dependencies": {
-        "@swipechain/core-kernel": "^3.0.5",
-        "@swipechain/crypto": "^3.0.5",
+        "@swipechain/core-kernel": "^3.1.0",
+        "@swipechain/crypto": "^3.1.0",
         "@swipechain/utils": "^1.0.1",
         "boxen": "^4.2.0",
         "cli-table3": "^0.6.0",

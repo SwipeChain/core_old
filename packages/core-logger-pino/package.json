@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-logger-pino",
-    "version": "3.0.5",
+    "version": "3.1.0",
     "description": "Webhooks for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -20,7 +20,7 @@
         "pretest": "bash ../../scripts/pre-test.sh"
     },
     "dependencies": {
-        "@swipechain/core-kernel": "^3.0.5",
+        "@swipechain/core-kernel": "^3.1.0",
         "chalk": "^4.0.0",
         "joi": "^17.3.0",
         "pino": "^6.0.0",

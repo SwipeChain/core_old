@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-magistrate-crypto",
-    "version": "3.0.5",
+    "version": "3.1.0",
     "description": "Swipechain transactions for businesses and bridgechains",
     "license": "MIT",
     "contributors": [
@@ -19,8 +19,8 @@
         "prepublishOnly": "yarn build"
     },
     "dependencies": {
-        "@swipechain/core-kernel": "^3.0.5",
-        "@swipechain/crypto": "^3.0.5",
+        "@swipechain/core-kernel": "^3.1.0",
+        "@swipechain/crypto": "^3.1.0",
         "bytebuffer": "^5.0.1"
     },
     "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"

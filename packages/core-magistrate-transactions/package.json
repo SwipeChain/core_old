@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-magistrate-transactions",
-    "version": "3.0.5",
+    "version": "3.1.0",
     "description": "Swipechain transactions for businesses and bridgechains",
     "license": "MIT",
     "contributors": [
@@ -19,10 +19,10 @@
         "prepublishOnly": "yarn build"
     },
     "dependencies": {
-        "@swipechain/core-kernel": "^3.0.5",
-        "@swipechain/core-magistrate-crypto": "^3.0.5",
-        "@swipechain/core-transactions": "^3.0.5",
-        "@swipechain/crypto": "^3.0.5"
+        "@swipechain/core-kernel": "^3.1.0",
+        "@swipechain/core-magistrate-crypto": "^3.1.0",
+        "@swipechain/core-transactions": "^3.1.0",
+        "@swipechain/crypto": "^3.1.0"
     },
     "publishConfig": {
         "access": "public"

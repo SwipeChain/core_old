@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-manager",
-    "version": "3.0.7",
+    "version": "3.1.0",
     "description": "Manager for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -26,10 +26,10 @@
         "@hapist/json-rpc": "^0.2.0",
         "@hapist/whitelist": "^0.1.0",
         "@sindresorhus/df": "^3.1.1",
-        "@swipechain/core": "^3.0.7",
-        "@swipechain/core-cli": "^3.0.5",
-        "@swipechain/core-kernel": "^3.0.5",
-        "@swipechain/crypto": "^3.0.5",
+        "@swipechain/core": "^3.1.0",
+        "@swipechain/core-cli": "^3.1.0",
+        "@swipechain/core-kernel": "^3.1.0",
+        "@swipechain/crypto": "^3.1.0",
         "archiver": "^5.2.0",
         "argon2": "^0.26.2",
         "better-sqlite3": "^7.1.2",

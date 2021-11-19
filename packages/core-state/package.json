@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-state",
-    "version": "3.0.5",
+    "version": "3.1.0",
     "description": "State Management for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -21,10 +21,10 @@
         "pretest": "bash ../../scripts/pre-test.sh"
     },
     "dependencies": {
-        "@swipechain/core-database": "^3.0.5",
-        "@swipechain/core-kernel": "^3.0.5",
-        "@swipechain/core-transactions": "^3.0.5",
-        "@swipechain/crypto": "^3.0.5",
+        "@swipechain/core-database": "^3.1.0",
+        "@swipechain/core-kernel": "^3.1.0",
+        "@swipechain/core-transactions": "^3.1.0",
+        "@swipechain/crypto": "^3.1.0",
         "immutable": "^4.0.0-rc.12",
         "joi": "^17.3.0"
     },
