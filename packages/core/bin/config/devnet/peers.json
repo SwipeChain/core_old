@@ -10,6 +10,14 @@
         {
             "ip": "18.133.107.115",
             "port": 4002
+        },
+        {
+            "ip": "3.10.175.231",
+            "port": 4002
+        },
+        {
+            "ip": "18.169.53.217",
+            "port": 4002
         }
     ],
     "sources": ["https://raw.githubusercontent.com/SwipeChain/swipechain-peers/main/devnet.json"]
