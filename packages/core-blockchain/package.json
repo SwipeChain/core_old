@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-blockchain",
-    "version": "3.1.0",
+    "version": "3.1.6",
     "description": "Blockchain Manager for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -21,11 +21,11 @@
         "pretest": "bash ../../scripts/pre-test.sh"
     },
     "dependencies": {
-        "@swipechain/core-database": "^3.1.0",
-        "@swipechain/core-kernel": "^3.1.0",
-        "@swipechain/core-state": "^3.1.0",
-        "@swipechain/core-transactions": "^3.1.0",
-        "@swipechain/crypto": "^3.1.0",
+        "@swipechain/core-database": "^3.1.6",
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/core-state": "^3.1.6",
+        "@swipechain/core-transactions": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6",
         "joi": "^17.3.0",
         "xstate": "^4.8.0"
     },

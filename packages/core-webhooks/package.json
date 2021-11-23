@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-webhooks",
-    "version": "3.1.0",
+    "version": "3.1.6",
     "description": "Webhooks for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -22,8 +22,8 @@
     "dependencies": {
         "@hapi/boom": "^9.0.0",
         "@hapi/hapi": "^20.0.3",
-        "@swipechain/core-kernel": "^3.1.0",
-        "@swipechain/crypto": "^3.1.0",
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6",
         "fs-extra": "^8.1.0",
         "joi": "^17.3.0",
         "lowdb": "^1.0.0",

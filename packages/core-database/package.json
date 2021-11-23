@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-database",
-    "version": "3.1.0",
+    "version": "3.1.6",
     "description": "Database Interface for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -21,8 +21,8 @@
         "pretest": "bash ../../scripts/pre-test.sh"
     },
     "dependencies": {
-        "@swipechain/core-kernel": "^3.1.0",
-        "@swipechain/crypto": "^3.1.0",
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6",
         "@swipechain/utils": "^1.0.1",
         "dayjs": "^1.8.17",
         "joi": "^17.3.0",

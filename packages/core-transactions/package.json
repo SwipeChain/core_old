@@ -1,6 +1,6 @@
 {
     "name": "@swipechain/core-transactions",
-    "version": "3.1.0",
+    "version": "3.1.6",
     "description": "Transaction Services for Swipechain Core",
     "license": "MIT",
     "contributors": [
@@ -20,9 +20,9 @@
         "prepublishOnly": "yarn build"
     },
     "dependencies": {
-        "@swipechain/core-database": "^3.1.0",
-        "@swipechain/core-kernel": "^3.1.0",
-        "@swipechain/crypto": "^3.1.0"
+        "@swipechain/core-database": "^3.1.6",
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6"
     },
     "engines": {
         "node": ">=10.x"
