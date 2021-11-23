@@ -25,17 +25,17 @@ describe("Config", () => {
         expect(config.all()).toEqual({
             channel: "next",
             plugins: [],
-            token: "ark",
+            token: "sxp",
         });
     });
 
     it("should setup a new config with default values", () => {
-        expect(config.get("token")).toBe("ark");
+        expect(config.get("token")).toBe("sxp");
         expect(config.get("channel")).toBeOneOf(["latest", "next"]);
     });
 
     it("should set and get a value", () => {
-        expect(config.get("token")).toBe("ark");
+        expect(config.get("token")).toBe("sxp");
 
         config.set("token", "btc");
 
@@ -64,7 +64,7 @@ describe("Config", () => {
 
     describe("#save", () => {
         it("should restore the defaults if the config has been corrupted", () => {
-            expect(config.get("token")).toBe("ark");
+            expect(config.get("token")).toBe("sxp");
             expect(config.get("channel")).toBe("next");
             expect(config.get("plugins")).toEqual([]);
 
@@ -92,7 +92,7 @@ describe("Config", () => {
             config.restoreDefaults();
 
             expect(config.store).toBeObject();
-            expect(config.get("token")).toBe("ark");
+            expect(config.get("token")).toBe("sxp");
             expect(config.get("channel")).toBe("next");
             expect(config.get("plugins")).toEqual([]);
         });

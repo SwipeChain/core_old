@@ -64,7 +64,7 @@ describe("Console", () => {
 
             await expect(console.execute(Command)).toResolve();
             expect(spyOnGetFlag).toHaveBeenCalledWith("flagValue");
-            expect(spyOnGetFlagToken).toHaveBeenCalledWith("ark");
+            expect(spyOnGetFlagToken).toHaveBeenCalledWith("sxp");
             expect(spyOnGetFlagNetwork).toHaveBeenCalledWith("testnet");
             expect(spyOnGetArgument).toHaveBeenCalledWith("argumentValue");
         });
@@ -74,7 +74,7 @@ describe("Console", () => {
 
             await expect(console.withFlags({ flagName: "flag_test" }).execute(Command)).toResolve();
             expect(spyOnGetFlag).toHaveBeenCalledWith("flag_test");
-            expect(spyOnGetFlagToken).toHaveBeenCalledWith("ark");
+            expect(spyOnGetFlagToken).toHaveBeenCalledWith("sxp");
             expect(spyOnGetFlagNetwork).toHaveBeenCalledWith("testnet");
             expect(spyOnGetArgument).toHaveBeenCalledWith("argumentValue");
         });
@@ -84,7 +84,7 @@ describe("Console", () => {
 
             await expect(console.withArgs(["test_arg"]).execute(Command)).toResolve();
             expect(spyOnGetFlag).toHaveBeenCalledWith("flagValue");
-            expect(spyOnGetFlagToken).toHaveBeenCalledWith("ark");
+            expect(spyOnGetFlagToken).toHaveBeenCalledWith("sxp");
             expect(spyOnGetFlagNetwork).toHaveBeenCalledWith("testnet");
             expect(spyOnGetArgument).toHaveBeenCalledWith("test_arg");
         });

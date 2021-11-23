@@ -32,7 +32,7 @@ afterAll(() => nock.enableNetConnect());
 describe("Updater", () => {
     describe("#check", () => {
         it("should forget the latest version if it has one from a previous check", async () => {
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, versionNext);
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, versionNext);
 
             config.set("latestVersion", {});
 
@@ -43,7 +43,7 @@ describe("Updater", () => {
         });
 
         it("should return false if the latest version cannot be retrieved", async () => {
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, {});
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, {});
 
             const spyWarning = jest.spyOn(cli.app.get(Container.Identifiers.Warning), "render");
 
@@ -52,13 +52,13 @@ describe("Updater", () => {
         });
 
         it("should return false if the latest version is already installed", async () => {
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, versionNext);
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, versionNext);
 
             await expect(updater.check()).resolves.toBeFalse();
         });
 
         it("should return false if the last check has been within the last 24 hours ago", async () => {
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, versionNext);
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, versionNext);
 
             config.set("lastUpdateCheck", Date.now());
 
@@ -74,7 +74,7 @@ describe("Updater", () => {
                 ...{ version: "4.0.0-next.0" },
             };
 
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, response);
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, response);
 
             config.set("latestVersion", {});
 
@@ -100,7 +100,7 @@ describe("Updater", () => {
                 ...{ version: "4.0.0-next.0" },
             };
 
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, response);
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, response);
 
             const spySync: jest.SpyInstance = jest.spyOn(execa, "sync").mockReturnValue({
                 stdout: '"null"',
@@ -134,7 +134,7 @@ describe("Updater", () => {
                 ...{ version: "4.0.0-next.0" },
             };
 
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, response);
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, response);
 
             const spySync: jest.SpyInstance = jest.spyOn(execa, "sync").mockReturnValue({
                 stdout: '"null"',
@@ -168,7 +168,7 @@ describe("Updater", () => {
                 ...{ version: "4.0.0-next.0" },
             };
 
-            nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, response);
+            nock(/.*/).get("/@swipechain%2Fcore").reply(200, response);
 
             const spySync: jest.SpyInstance = jest.spyOn(execa, "sync").mockReturnValue({
                 stdout: '"null"',

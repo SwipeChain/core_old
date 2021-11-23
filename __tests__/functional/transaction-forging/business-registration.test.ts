@@ -31,7 +31,7 @@ describe("Transaction Forging - Business registration", () => {
                     TransactionFactory.initialize(app)
                         .businessRegistration({
                             name,
-                            website: "http://ark.io",
+                            website: "http://swipechain.org",
                         })
                         .withPassphrase(secrets[10 + i])
                         .createOne(),
@@ -49,8 +49,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business again
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark.io",
-                    website: "https://ark.io",
+                    name: "swipechain.org",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(secrets[10])
                 .createOne();
@@ -64,8 +64,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business with unicode control characters in its name
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "\u0000ark",
-                    website: "https://ark.io",
+                    name: "\u0000swipechain",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(secrets[1])
                 .createOne();
@@ -86,7 +86,7 @@ describe("Transaction Forging - Business registration", () => {
                     TransactionFactory.initialize(app)
                         .businessRegistration({
                             name,
-                            website: "https://ark.io",
+                            website: "https://swipechain.org",
                         })
                         .withPassphrase(secrets[1])
                         .createOne(),
@@ -105,8 +105,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "https://ark.io",
+                    token: "swipechain",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(secrets[1])
                 .createOne();
@@ -114,8 +114,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business again
             const businessRegistration2 = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "https://ark.io",
+                    token: "swipechain",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(secrets[1])
                 .withNonce(businessRegistration.nonce.plus(1))
@@ -131,8 +131,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "ark.io",
+                    token: "swipechain",
+                    website: "swipechain.org",
                 })
                 .withPassphrase(secrets[2])
                 .createOne();
@@ -146,9 +146,9 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "https://ark.io",
-                    repository: "http//ark.io/repo",
+                    token: "swipechain",
+                    website: "https://swipechain.org",
+                    repository: "http//swipechain.org/repo",
                 })
                 .withPassphrase(secrets[3])
                 .createOne();
@@ -188,8 +188,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "https://ark.io",
+                    token: "swipechain",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(passphrase)
                 .withSecondPassphrase(secondPassphrase)
@@ -204,8 +204,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business again
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "https://ark.io",
+                    token: "swipechain",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(passphrase)
                 .withSecondPassphrase(secondPassphrase)
@@ -269,8 +269,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "https://ark.io",
+                    token: "swipechain",
+                    website: "https://swipechain.org",
                 })
                 .withSenderPublicKey(multiSigPublicKey)
                 .withPassphraseList(signPassphrases)
@@ -285,8 +285,8 @@ describe("Transaction Forging - Business registration", () => {
             // Registering a business again
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
-                    name: "ark",
-                    website: "https://ark.io",
+                    token: "swipechain",
+                    website: "https://swipechain.org",
                 })
                 .withSenderPublicKey(multiSigPublicKey)
                 .withPassphraseList(signPassphrases)

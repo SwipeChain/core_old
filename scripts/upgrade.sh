@@ -18,15 +18,15 @@ if [ -f .config/swipechain-core/devnet/.env ]; then
 fi
 
 if [ -f .config/swipechain-core/devnet/plugins.js ]; then
-    sed -i 's/ARK_/CORE_/g' .config/swipechain-core/devnet/plugins.js
+    sed -i 's/SXP_/CORE_/g' .config/swipechain-core/devnet/plugins.js
 fi
 
 if [ -f .config/swipechain-core/mainnet/.env ]; then
-    sed -i 's/ARK_/CORE_/g' .config/swipechain-core/mainnet/.env
+    sed -i 's/SXP_/CORE_/g' .config/swipechain-core/mainnet/.env
 fi
 
 if [ -f .config/swipechain-core/mainnet/plugins.js ]; then
-    sed -i 's/ARK_/CORE_/g' .config/swipechain-core/mainnet/plugins.js
+    sed -i 's/SXP_/CORE_/g' .config/swipechain-core/mainnet/plugins.js
 fi
 
 cd ~/swipechain-core

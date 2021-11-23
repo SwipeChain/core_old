@@ -129,10 +129,10 @@ describe("PeerCommunicator", () => {
                 network: {
                     name: "testnet",
                     nethash: Managers.configManager.get("network.nethash"),
-                    explorer: "explorer.ark.io",
+                    explorer: "explorer.swipechain.org",
                     token: {
-                        name: "TARK",
-                        symbol: "TARK",
+                        name: "TSXP",
+                        symbol: "TSXP",
                     },
                 },
                 version: "3.0.0",

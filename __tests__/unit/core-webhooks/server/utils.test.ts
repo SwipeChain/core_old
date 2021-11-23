@@ -6,7 +6,7 @@ import { respondWithResource } from "@packages/core-webhooks/src/server/utils";
 
 const data: Webhook = {
     id: "dummy_id",
-    token: "ark",
+    token: "sxp",
     event: Enums.BlockEvent.Forged,
     target: "https://httpbin.org/post",
     enabled: true,

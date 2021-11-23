@@ -24,16 +24,16 @@ describe("DaemonizeProcess", () => {
         expect(() =>
             action.execute(
                 {
-                    name: "ark-core",
+                    name: "swipechain-core",
                     script: "script",
                     args: "core:run --daemon",
                 },
                 {},
             ),
-        ).toThrow('The "ark-core" process has entered an unknown state.');
+        ).toThrow('The "swipechain-core" process has entered an unknown state.');
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
 
         has.mockClear();
         isUnknown.mockClear();
@@ -47,17 +47,17 @@ describe("DaemonizeProcess", () => {
         expect(() =>
             action.execute(
                 {
-                    name: "ark-core",
+                    name: "swipechain-core",
                     script: "script",
                     args: "core:run --daemon",
                 },
                 {},
             ),
-        ).toThrow('The "ark-core" process is already running.');
+        ).toThrow('The "swipechain-core" process is already running.');
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
-        expect(isOnline).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
 
         has.mockClear();
         isUnknown.mockClear();
@@ -71,16 +71,16 @@ describe("DaemonizeProcess", () => {
 
         action.execute(
             {
-                name: "ark-core",
+                name: "swipechain-core",
                 script: "script",
                 args: "core:run --daemon",
             },
             {},
         );
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).not.toHaveBeenCalledWith("ark-core");
-        expect(isOnline).not.toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).not.toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).not.toHaveBeenCalledWith("swipechain-core");
 
         has.mockClear();
         isUnknown.mockClear();
@@ -97,27 +97,27 @@ describe("DaemonizeProcess", () => {
 
         action.execute(
             {
-                name: "ark-core",
+                name: "swipechain-core",
                 script: "script",
                 args: "core:run --daemon",
             },
             {},
         );
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
-        expect(isOnline).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
         expect(freemem).toHaveBeenCalled();
         expect(totalmem).toHaveBeenCalled();
         expect(start).toHaveBeenCalledWith(
             {
                 args: "core:run --daemon",
                 env: { CORE_ENV: undefined, NODE_ENV: "production" },
-                name: "ark-core",
+                name: "swipechain-core",
                 node_args: undefined,
                 script: "script",
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-core", "no-daemon": true },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
         );
 
         has.mockClear();
@@ -138,27 +138,27 @@ describe("DaemonizeProcess", () => {
 
         action.execute(
             {
-                name: "ark-core",
+                name: "swipechain-core",
                 script: "script",
                 args: "core:run --daemon",
             },
             { daemon: false },
         );
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
-        expect(isOnline).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
         expect(freemem).toHaveBeenCalled();
         expect(totalmem).toHaveBeenCalled();
         expect(start).toHaveBeenCalledWith(
             {
                 args: "core:run --daemon",
                 env: { CORE_ENV: undefined, NODE_ENV: "production" },
-                name: "ark-core",
+                name: "swipechain-core",
                 node_args: undefined,
                 script: "script",
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-core", "no-daemon": true },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
         );
 
         has.mockClear();
@@ -179,27 +179,27 @@ describe("DaemonizeProcess", () => {
 
         action.execute(
             {
-                name: "ark-core",
+                name: "swipechain-core",
                 script: "script",
                 args: "core:run --daemon",
             },
             { daemon: true },
         );
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
-        expect(isOnline).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
         expect(freemem).toHaveBeenCalled();
         expect(totalmem).toHaveBeenCalled();
         expect(start).toHaveBeenCalledWith(
             {
                 args: "core:run --daemon",
                 env: { CORE_ENV: undefined, NODE_ENV: "production" },
-                name: "ark-core",
+                name: "swipechain-core",
                 node_args: undefined,
                 script: "script",
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-core" },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core" },
         );
 
         has.mockClear();
@@ -220,16 +220,16 @@ describe("DaemonizeProcess", () => {
 
         action.execute(
             {
-                name: "ark-core",
+                name: "swipechain-core",
                 script: "script",
                 args: "core:run --daemon",
             },
             {},
         );
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
-        expect(isOnline).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
         expect(freemem).toHaveBeenCalled();
         expect(totalmem).toHaveBeenCalled();
         expect(start).toHaveBeenCalledWith(
@@ -239,13 +239,13 @@ describe("DaemonizeProcess", () => {
                     CORE_ENV: undefined,
                     NODE_ENV: "production",
                 },
-                name: "ark-core",
+                name: "swipechain-core",
                 node_args: {
                     max_old_space_size: 500,
                 },
                 script: "script",
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-core", "no-daemon": true },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
         );
 
         has.mockClear();
@@ -269,7 +269,7 @@ describe("DaemonizeProcess", () => {
         expect(() =>
             action.execute(
                 {
-                    name: "ark-core",
+                    name: "swipechain-core",
                     script: "script",
                     args: "core:run --daemon",
                 },
@@ -277,20 +277,20 @@ describe("DaemonizeProcess", () => {
             ),
         ).toThrow("unexpected error");
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
-        expect(isOnline).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
         expect(freemem).toHaveBeenCalled();
         expect(totalmem).toHaveBeenCalled();
         expect(start).toHaveBeenCalledWith(
             {
                 args: "core:run --daemon",
                 env: { CORE_ENV: undefined, NODE_ENV: "production" },
-                name: "ark-core",
+                name: "swipechain-core",
                 node_args: undefined,
                 script: "script",
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-core", "no-daemon": true },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
         );
 
         has.mockClear();
@@ -318,7 +318,7 @@ describe("DaemonizeProcess", () => {
         expect(() =>
             action.execute(
                 {
-                    name: "ark-core",
+                    name: "swipechain-core",
                     script: "script",
                     args: "core:run --daemon",
                 },
@@ -326,20 +326,20 @@ describe("DaemonizeProcess", () => {
             ),
         ).toThrow("hello world: unexpected error");
 
-        expect(has).toHaveBeenCalledWith("ark-core");
-        expect(isUnknown).toHaveBeenCalledWith("ark-core");
-        expect(isOnline).toHaveBeenCalledWith("ark-core");
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
         expect(freemem).toHaveBeenCalled();
         expect(totalmem).toHaveBeenCalled();
         expect(start).toHaveBeenCalledWith(
             {
                 args: "core:run --daemon",
                 env: { CORE_ENV: undefined, NODE_ENV: "production" },
-                name: "ark-core",
+                name: "swipechain-core",
                 node_args: undefined,
                 script: "script",
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-core", "no-daemon": true },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
         );
 
         has.mockClear();

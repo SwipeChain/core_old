@@ -2,7 +2,7 @@ import { Container } from "@swipechain/core-cli";
 import { Console } from "@swipechain/core-test-framework";
 import { RestartProcess } from "@packages/core-cli/src/actions";
 
-const processName: string = "ark-core";
+const processName: string = "swipechain-core";
 
 let cli;
 let processManager;

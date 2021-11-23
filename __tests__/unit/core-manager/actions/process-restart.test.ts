@@ -41,16 +41,16 @@ describe("Process:Restart", () => {
     });
 
     it("should return status and syncing using HTTP", async () => {
-        const result = await action.execute({ name: "ark-core" });
+        const result = await action.execute({ name: "swipechain-core" });
 
-        expect(result).toEqual({ name: "ark-core", status: "online" });
+        expect(result).toEqual({ name: "swipechain-core", status: "online" });
     });
 
     it("should return status undefined if processManager status is undefined", async () => {
         mockProcessManagerStatus = undefined;
 
-        const result = await action.execute({ name: "ark-core" });
+        const result = await action.execute({ name: "swipechain-core" });
 
-        expect(result).toEqual({ name: "ark-core", status: "undefined" });
+        expect(result).toEqual({ name: "swipechain-core", status: "undefined" });
     });
 });

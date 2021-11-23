@@ -106,7 +106,7 @@ describe("ServiceProvider.configSchema", () => {
             }
         }
 
-        process.env.CORE_TOKEN = "ark";
+        process.env.CORE_TOKEN = "sxp";
         process.env.CORE_NETWORK_NAME = "testnet";
     });
 
@@ -121,8 +121,8 @@ describe("ServiceProvider.configSchema", () => {
         expect(result.value.connection.type).toEqual("postgres");
         expect(result.value.connection.host).toEqual("localhost");
         expect(result.value.connection.port).toEqual(5432);
-        expect(result.value.connection.database).toEqual("ark_testnet");
-        expect(result.value.connection.username).toEqual("ark");
+        expect(result.value.connection.database).toEqual("swipechain_testnet");
+        expect(result.value.connection.username).toEqual("swipechain");
         expect(result.value.connection.password).toBeString();
         expect(result.value.connection.entityPrefix).toBeString();
         expect(result.value.connection.synchronize).toBeFalse();

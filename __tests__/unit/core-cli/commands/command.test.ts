@@ -98,7 +98,7 @@ describe("Command", () => {
 
     describe("#run", () => {
         it("should run the command with the given token and network", async () => {
-            cmd.setFlag("token", "ark");
+            cmd.setFlag("token", "sxp");
             cmd.setFlag("network", "testnet");
 
             await cmd.run();
@@ -144,7 +144,7 @@ describe("Command", () => {
         });
 
         it("should run the command and try to detect a network", async () => {
-            cmd.input.setFlag("token", "ark");
+            cmd.input.setFlag("token", "sxp");
             cmd.input.setFlag("network", undefined);
 
             const spyOnDiscover = jest.spyOn(DiscoverNetwork.prototype, "discover").mockImplementation();

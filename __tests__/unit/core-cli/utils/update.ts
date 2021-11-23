@@ -18,13 +18,13 @@ describe("getLatestVersion", () => {
     });
 
     it("should get the npm registry channel (latest)", async () => {
-        nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, versionLatest);
+        nock(/.*/).get("/@swipechain%2Fcore").reply(200, versionLatest);
 
         await expect(getLatestVersion("@swipechain/core", "latest")).resolves.toBe("2.5.24");
     });
 
     it("should get the npm registry channel (next)", async () => {
-        nock(/.*/).get("/@arkecosystem%2Fcore").reply(200, versionNext);
+        nock(/.*/).get("/@swipechain%2Fcore").reply(200, versionNext);
 
         await expect(getLatestVersion("@swipechain/core", "next")).resolves.toBe("2.5.0-next.10");
     });
@@ -46,7 +46,7 @@ describe("installFromChannel", () => {
 
         installFromChannel("@swipechain/core", "latest");
 
-        expect(spySync).toHaveBeenCalledWith("yarn global add @arkecosystem/core@latest");
+        expect(spySync).toHaveBeenCalledWith("yarn global add @swipechain/core@latest");
     });
 
     it("should be not ok if [stderr] output is present", () => {
@@ -57,6 +57,6 @@ describe("installFromChannel", () => {
 
         expect(() => installFromChannel("@swipechain/core", "latest")).toThrow("stderr");
 
-        expect(spySync).toHaveBeenCalledWith("yarn global add @arkecosystem/core@latest");
+        expect(spySync).toHaveBeenCalledWith("yarn global add @swipechain/core@latest");
     });
 });

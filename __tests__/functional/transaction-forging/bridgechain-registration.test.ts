@@ -19,7 +19,7 @@ describe("Transaction Forging - Bridgechain registration", () => {
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
                     name: "swipechain",
-                    website: "https://ark.io",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(secrets[0])
                 .createOne();
@@ -195,7 +195,7 @@ describe("Transaction Forging - Bridgechain registration", () => {
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
                     name: "swipechain",
-                    website: "https://ark.io",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(secrets[5])
                 .createOne();
@@ -252,7 +252,7 @@ describe("Transaction Forging - Bridgechain registration", () => {
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
                     name: "swipechain",
-                    website: "https://ark.io",
+                    website: "https://swipechain.org",
                 })
                 .withPassphrase(passphrase)
                 .withSecondPassphrase(secondPassphrase)
@@ -330,7 +330,7 @@ describe("Transaction Forging - Bridgechain registration", () => {
             const businessRegistration = TransactionFactory.initialize(app)
                 .businessRegistration({
                     name: "swipechain",
-                    website: "https://ark.io",
+                    website: "https://swipechain.org",
                 })
                 .withSenderPublicKey(multiSigPublicKey)
                 .withPassphraseList(passphrases)

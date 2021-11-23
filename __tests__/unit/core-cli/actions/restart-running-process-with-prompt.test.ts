@@ -3,7 +3,7 @@ import { Console } from "@swipechain/core-test-framework";
 import { RestartRunningProcessWithPrompt } from "@packages/core-cli/src/actions";
 import prompts from "prompts";
 
-const processName: string = "ark-core";
+const processName: string = "swipechain-core";
 
 let cli;
 let processManager;

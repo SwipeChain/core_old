@@ -47,7 +47,7 @@ export const setUp = async (): Promise<Application> => {
 
     sandbox.withCoreOptions({
         flags: {
-            token: "ark",
+            token: "sxp",
             network: "unitnet",
             env: "test",
         },
@@ -91,7 +91,7 @@ export const setUp = async (): Promise<Application> => {
         .boot(async ({ app }) => {
             await app.bootstrap({
                 flags: {
-                    token: "ark",
+                    token: "sxp",
                     network: "unitnet",
                     env: "test",
                     processType: "core",

@@ -30,16 +30,16 @@ describe("StartCommand", () => {
 
         expect(spyStart).toHaveBeenCalledWith(
             {
-                args: "core:run --token=ark --network=testnet --v=0 --env=production",
+                args: "core:run --token=sxp --network=testnet --v=0 --env=production",
                 env: {
                     CORE_ENV: "production",
                     NODE_ENV: "production",
                 },
-                name: "ark-core",
+                name: "swipechain-core",
                 node_args: undefined,
                 script: resolve(__dirname, "../../../../packages/core/bin/run"),
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-core" },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core" },
         );
     });
 });

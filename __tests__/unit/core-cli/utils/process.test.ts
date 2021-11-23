@@ -21,7 +21,7 @@ beforeEach(() => {
             return process;
         });
 
-    proc = cli.app.get(Container.Identifiers.ProcessFactory)("ark", "core");
+    proc = cli.app.get(Container.Identifiers.ProcessFactory)("swipechain", "core");
 });
 
 afterEach(() => jest.restoreAllMocks());
@@ -35,7 +35,7 @@ describe("Process", () => {
             const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
             const isStopped = jest.spyOn(processManager, "isStopped").mockReturnValue(false);
 
-            expect(() => proc.stop()).toThrowError('The "ark-core" process does not exist.');
+            expect(() => proc.stop()).toThrowError('The "swipechain-core" process does not exist.');
 
             missing.mockReset();
             isUnknown.mockReset();
@@ -47,7 +47,7 @@ describe("Process", () => {
             const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(true);
             const isStopped = jest.spyOn(processManager, "isStopped").mockReturnValue(false);
 
-            expect(() => proc.stop()).toThrowError('The "ark-core" process has entered an unknown state.');
+            expect(() => proc.stop()).toThrowError('The "swipechain-core" process has entered an unknown state.');
 
             missing.mockReset();
             isUnknown.mockReset();
@@ -59,7 +59,7 @@ describe("Process", () => {
             const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
             const isStopped = jest.spyOn(processManager, "isStopped").mockReturnValue(true);
 
-            expect(() => proc.stop()).toThrowError('The "ark-core" process is not running.');
+            expect(() => proc.stop()).toThrowError('The "swipechain-core" process is not running.');
 
             missing.mockReset();
             isUnknown.mockReset();
@@ -104,7 +104,7 @@ describe("Process", () => {
             const missing = jest.spyOn(processManager, "missing").mockReturnValue(true);
             const isStopped = jest.spyOn(processManager, "isStopped").mockReturnValue(false);
 
-            expect(() => proc.restart()).toThrowError('The "ark-core" process does not exist.');
+            expect(() => proc.restart()).toThrowError('The "swipechain-core" process does not exist.');
 
             missing.mockReset();
             isStopped.mockReset();
@@ -114,7 +114,7 @@ describe("Process", () => {
             const missing = jest.spyOn(processManager, "missing").mockReturnValue(false);
             const isStopped = jest.spyOn(processManager, "isStopped").mockReturnValue(true);
 
-            expect(() => proc.restart()).toThrowError('The "ark-core" process is not running.');
+            expect(() => proc.restart()).toThrowError('The "swipechain-core" process is not running.');
 
             missing.mockReset();
             isStopped.mockReset();
@@ -137,14 +137,14 @@ describe("Process", () => {
 
     describe("#status", () => {
         it("should throw if the process does not exist", async () => {
-            expect(() => proc.status()).toThrow('The "ark-core" process does not exist.');
+            expect(() => proc.status()).toThrow('The "swipechain-core" process does not exist.');
         });
 
         it("should render a table with the process information", async () => {
             jest.spyOn(processManager, "missing").mockReturnValue(false);
             jest.spyOn(processManager, "describe").mockReturnValue({
                 pid: 1,
-                name: "ark-core",
+                name: "swipechain-core",
                 pm2_env: {
                     version: "1.0.0",
                     status: "online",
@@ -161,7 +161,7 @@ describe("Process", () => {
             expect(message).toIncludeMultiple(["ID", "Name", "Version", "Status", "Uptime", "CPU", "RAM"]);
             expect(message).toIncludeMultiple([
                 "1",
-                "ark-core",
+                "swipechain-core",
                 "1.0.0",
                 "online",
                 // "5y 267d 19h 31m 28.1s",
@@ -173,14 +173,14 @@ describe("Process", () => {
 
     describe("#log", () => {
         it("should throw if the process does not exist", async () => {
-            await expect(proc.log()).rejects.toThrow('The "ark-core" process does not exist.');
+            await expect(proc.log()).rejects.toThrow('The "swipechain-core" process does not exist.');
         });
 
         it("should log to pm_out_log_path", async () => {
             jest.spyOn(cli.app.get(Container.Identifiers.AbortMissingProcess), "execute").mockImplementation();
             jest.spyOn(processManager, "describe").mockReturnValue({
                 pid: 1,
-                name: "ark-core",
+                name: "swipechain-core",
                 pm2_env: {
                     version: "1.0.0",
                     status: "online",
@@ -204,7 +204,7 @@ describe("Process", () => {
             jest.spyOn(cli.app.get(Container.Identifiers.AbortMissingProcess), "execute").mockImplementation();
             jest.spyOn(processManager, "describe").mockReturnValue({
                 pid: 1,
-                name: "ark-core",
+                name: "swipechain-core",
                 pm2_env: {
                     version: "1.0.0",
                     status: "online",

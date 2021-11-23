@@ -35,7 +35,7 @@ describe("Process:Delete", () => {
     });
 
     it("should resolve", async () => {
-        const result = await action.execute({ name: "ark-core" });
+        const result = await action.execute({ name: "swipechain-core" });
 
         expect(result).toEqual({ });
         expect(deleteMethod).toHaveBeenCalled();

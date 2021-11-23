@@ -67,7 +67,7 @@ describe("Delegate Registration Transaction", () => {
         });
     });
 
-    // FIXME problems with ark-js V1
+    // FIXME problems with swipechain-js V1
     // note: this will only work with v1 transactions as v2 transactions don't have a timestamp
     describe("getStruct", () => {
         beforeEach(() => {

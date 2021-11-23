@@ -30,7 +30,7 @@ beforeEach(() => {
 
     sandbox = new Sandbox();
 
-    sandbox.app.bind(Container.Identifiers.ApplicationToken).toConstantValue("ark");
+    sandbox.app.bind(Container.Identifiers.ApplicationToken).toConstantValue("sxp");
     sandbox.app.bind(Identifiers.CLI).toConstantValue(mockCli);
 
     action = sandbox.app.resolve(Action);
@@ -55,7 +55,7 @@ describe("Info:CoreStatus", () => {
 
         expect(result).toEqual({ processStatus: "online", syncing: true });
 
-        expect(mockProcessManager.status).toHaveBeenCalledWith("ark-core");
+        expect(mockProcessManager.status).toHaveBeenCalledWith("swipechain-core");
     });
 
     it("should return status and syncing using HTTP when token is passed", async () => {

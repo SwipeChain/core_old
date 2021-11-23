@@ -18,7 +18,7 @@ describe("Command", () => {
     it("should change the token", async () => {
         await cli.execute(Command);
 
-        expect(config.get("token")).toBe("ark");
+        expect(config.get("token")).toBe("sxp");
 
         await cli.withFlags({ token: "btc" }).execute(Command);
 

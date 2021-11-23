@@ -22,16 +22,16 @@ describe("StartCommand", () => {
 
         expect(spyStart).toHaveBeenCalledWith(
             {
-                args: "relay:run --token=ark --network=testnet --v=0 --env=production",
+                args: "relay:run --token=sxp --network=testnet --v=0 --env=production",
                 env: {
                     CORE_ENV: "production",
                     NODE_ENV: "production",
                 },
-                name: "ark-relay",
+                name: "swipechain-relay",
                 node_args: undefined,
                 script: resolve(__dirname, "../../../../packages/core/bin/run"),
             },
-            { "kill-timeout": 30000, "max-restarts": 5, name: "ark-relay" },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-relay" },
         );
     });
 });

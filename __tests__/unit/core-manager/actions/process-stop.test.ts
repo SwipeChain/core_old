@@ -40,10 +40,10 @@ describe("Process:Stop", () => {
     });
 
     it("should return stopped process status", async () => {
-        const result = await action.execute({ name: "ark-core" });
+        const result = await action.execute({ name: "swipechain-core" });
 
         expect(result).toEqual({
-            name: "ark-core",
+            name: "swipechain-core",
             status: "stopped",
         });
     });
@@ -51,10 +51,10 @@ describe("Process:Stop", () => {
     it("should return undefined status", async () => {
         mockProcessManagerStatus = undefined;
 
-        const result = await action.execute({ name: "ark-core" });
+        const result = await action.execute({ name: "swipechain-core" });
 
         expect(result).toEqual({
-            name: "ark-core",
+            name: "swipechain-core",
             status: "undefined",
         });
     });

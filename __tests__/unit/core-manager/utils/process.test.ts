@@ -3,7 +3,7 @@ import "jest-extended";
 import { getCoreOrForgerProcessName, getOnlineProcesses } from "@packages/core-manager/src/utils";
 
 let processManager;
-const processes = [{ name: "ark-core" }, { name: "ark-forger" }, { name: "ark-relay" }];
+const processes = [{ name: "swipechain-core" }, { name: "swipechain-forger" }, { name: "swipechain-relay" }];
 
 beforeEach(() => {
     processManager = {
@@ -19,13 +19,13 @@ describe("getOnlineProcesses", () => {
 });
 
 describe("getCoreOrForgerProcessName", () => {
-    it("should return ark-core", async () => {
-        expect(getCoreOrForgerProcessName(processes)).toEqual("ark-core");
+    it("should return swipechain-core", async () => {
+        expect(getCoreOrForgerProcessName(processes)).toEqual("swipechain-core");
     });
 
-    it("should throw error if ark-core or ark-forger is not online process", async () => {
+    it("should throw error if swipechain-core or swipechain-forger is not online process", async () => {
         expect(() => {
             getCoreOrForgerProcessName([]);
-        }).toThrowError("Process with name ark-forger or ark-core is not online");
+        }).toThrowError("Process with name swipechain-forger or swipechain-core is not online");
     });
 });

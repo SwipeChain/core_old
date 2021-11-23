@@ -16,7 +16,7 @@ let mockTrigger;
 let spyOnGetCoreOrForgerProcessName;
 
 beforeEach(() => {
-    spyOnGetCoreOrForgerProcessName = jest.spyOn(Utils, "getCoreOrForgerProcessName").mockReturnValue("ark-core");
+    spyOnGetCoreOrForgerProcessName = jest.spyOn(Utils, "getCoreOrForgerProcessName").mockReturnValue("swipechain-core");
     jest.spyOn(Utils, "getOnlineProcesses").mockReturnValue([]);
 
     mockTrigger = jest.fn().mockReturnValue({
@@ -31,7 +31,7 @@ beforeEach(() => {
 
     sandbox = new Sandbox();
 
-    sandbox.app.bind(Container.Identifiers.ApplicationToken).toConstantValue("ark");
+    sandbox.app.bind(Container.Identifiers.ApplicationToken).toConstantValue("sxp");
     sandbox.app.bind(Identifiers.CLI).toConstantValue(mockCli);
 
     action = sandbox.app.resolve(Action);
@@ -52,7 +52,7 @@ describe("Info:CurrentDelegate", () => {
 
         expect(result).toEqual({ rank: 16, username: "genesis_25" });
 
-        expect(spyOnGetCoreOrForgerProcessName).toHaveBeenCalledWith([], "ark");
+        expect(spyOnGetCoreOrForgerProcessName).toHaveBeenCalledWith([], "sxp");
     });
 
     it("should return current delegate using token in params", async () => {

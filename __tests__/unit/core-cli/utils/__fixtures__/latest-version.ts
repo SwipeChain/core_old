@@ -10,58 +10,58 @@ export const versionLatest = {
         "2.5.24": {
             name: "@swipechain/core",
             version: "2.5.24",
-            description: "Core of the ARK Blockchain",
+            description: "Core of the SXP Blockchain",
             license: "MIT",
             contributors: [
                 {
                     name: "François-Xavier Thoorens",
-                    email: "fx@ark.io",
+                    email: "fx@swipechain.org",
                 },
 
                 {
                     name: "Kristjan Košič",
-                    email: "kristjan@ark.io",
+                    email: "kristjan@swipechain.org",
                 },
 
                 {
                     name: "Brian Faust",
-                    email: "brian@ark.io",
+                    email: "brian@swipechain.org",
                 },
 
                 {
                     name: "Alex Barnsley",
-                    email: "alex@ark.io",
+                    email: "alex@swipechain.org",
                 },
             ],
             main: "dist/index",
             types: "dist/index",
             bin: {
-                ark: "./bin/run",
+                swipechain: "./bin/run",
             },
             scripts: {
-                ark: "./bin/run",
+                swipechain: "./bin/run",
                 build: "yarn clean && yarn compile && yarn copy",
                 "build:watch": "yarn clean && yarn copy && yarn compile -w",
                 clean: "del dist",
                 compile: "../../node_modules/typescript/bin/tsc",
                 copy: "cd ./src && cpy './config' '../dist/' --parents && cd ..",
-                "debug:forger": "node --inspect-brk yarn ark forger:run",
-                "debug:relay": "node --inspect-brk yarn ark relay:run",
-                "debug:start": "node --inspect-brk yarn ark core:run",
-                "forger:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn ark forger:run",
-                "forger:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn ark forger:run",
-                "forger:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark forger:run --env=test",
+                "debug:forger": "node --inspect-brk yarn swipechain forger:run",
+                "debug:relay": "node --inspect-brk yarn swipechain relay:run",
+                "debug:start": "node --inspect-brk yarn swipechain core:run",
+                "forger:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain forger:run",
+                "forger:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain forger:run",
+                "forger:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain forger:run --env=test",
                 "full:testnet":
-                    "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark core:run --networkStart --env=test",
+                    "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain core:run --networkStart --env=test",
                 prepack: "../../node_modules/.bin/oclif-dev manifest && npm shrinkwrap",
                 postpack: "rm -f oclif.manifest.json",
                 prepublishOnly: "yarn build",
-                "relay:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn ark relay:run",
-                "relay:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn ark relay:run",
-                "relay:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark relay:run --env=test",
-                "start:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn ark core:run",
-                "start:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn ark core:run",
-                "start:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark core:run --env=test",
+                "relay:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain relay:run",
+                "relay:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain relay:run",
+                "relay:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain relay:run --env=test",
+                "start:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain core:run",
+                "start:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain core:run",
+                "start:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain core:run --env=test",
             },
             dependencies: {
                 "@swipechain/core-api": "^2.5.24",
@@ -138,7 +138,7 @@ export const versionLatest = {
                     init: ["./dist/hooks/init/config", "./dist/hooks/init/update"],
                     command_not_found: ["./dist/hooks/command_not_found/suggest"],
                 },
-                bin: "ark",
+                bin: "swipechain",
                 topics: {
                     config: {
                         description: "manage core config variables",
@@ -174,7 +174,7 @@ export const versionLatest = {
                 integrity:
                     "sha512-l6SfF1F7dGHda0yvSFx9prao7FLSR9HhWOyQvp9NVGAxERvw5ne21xkWwb5HEZyh5UGpt68JbmLvIuNPlvCAMg==",
                 shasum: "531cdc7e9d5be02a14b8572d427e6c7c0bf80de2",
-                tarball: "https://registry.npmjs.org/@arkecosystem/core/-/core-2.5.24.tgz",
+                tarball: "https://registry.npmjs.org/@swipechain/core/-/core-2.5.24.tgz",
                 fileCount: 192,
                 unpackedSize: 997808,
                 "npm-signature":
@@ -196,58 +196,58 @@ export const versionNext = {
         "2.5.0-next.10": {
             name: "@swipechain/core",
             version: "2.5.0-next.10",
-            description: "Core of the ARK Blockchain",
+            description: "Core of the SXP Blockchain",
             license: "MIT",
             contributors: [
                 {
                     name: "François-Xavier Thoorens",
-                    email: "fx@ark.io",
+                    email: "fx@swipechain.org",
                 },
 
                 {
                     name: "Kristjan Košič",
-                    email: "kristjan@ark.io",
+                    email: "kristjan@swipechain.org",
                 },
 
                 {
                     name: "Brian Faust",
-                    email: "brian@ark.io",
+                    email: "brian@swipechain.org",
                 },
 
                 {
                     name: "Alex Barnsley",
-                    email: "alex@ark.io",
+                    email: "alex@swipechain.org",
                 },
             ],
             main: "dist/index",
             types: "dist/index",
             bin: {
-                ark: "./bin/run",
+                swipechain: "./bin/run",
             },
             scripts: {
-                ark: "./bin/run",
+                swipechain: "./bin/run",
                 build: "yarn clean && yarn compile && yarn copy",
                 "build:watch": "yarn clean && yarn copy && yarn compile -w",
                 clean: "del dist",
                 compile: "../../node_modules/typescript/bin/tsc",
                 copy: "cd ./src && cpy './config' '../dist/' --parents && cd ..",
-                "debug:forger": "node --inspect-brk yarn ark forger:run",
-                "debug:relay": "node --inspect-brk yarn ark relay:run",
-                "debug:start": "node --inspect-brk yarn ark core:run",
-                "forger:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn ark forger:run",
-                "forger:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn ark forger:run",
-                "forger:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark forger:run --env=test",
+                "debug:forger": "node --inspect-brk yarn swipechain forger:run",
+                "debug:relay": "node --inspect-brk yarn swipechain relay:run",
+                "debug:start": "node --inspect-brk yarn swipechain core:run",
+                "forger:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain forger:run",
+                "forger:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain forger:run",
+                "forger:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain forger:run --env=test",
                 "full:testnet":
-                    "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark core:run --networkStart --env=test",
+                    "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain core:run --networkStart --env=test",
                 prepack: "../../node_modules/.bin/oclif-dev manifest && npm shrinkwrap",
                 postpack: "rm -f oclif.manifest.json",
                 prepublishOnly: "yarn build",
-                "relay:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn ark relay:run",
-                "relay:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn ark relay:run",
-                "relay:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark relay:run --env=test",
-                "start:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn ark core:run",
-                "start:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn ark core:run",
-                "start:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn ark core:run --env=test",
+                "relay:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain relay:run",
+                "relay:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain relay:run",
+                "relay:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain relay:run --env=test",
+                "start:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain core:run",
+                "start:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain core:run",
+                "start:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain core:run --env=test",
             },
             dependencies: {
                 "@swipechain/core-api": "^2.5.0-next.10",
@@ -324,7 +324,7 @@ export const versionNext = {
                     init: ["./dist/hooks/init/config", "./dist/hooks/init/update"],
                     command_not_found: ["./dist/hooks/command_not_found/suggest"],
                 },
-                bin: "ark",
+                bin: "swipechain",
                 topics: {
                     config: {
                         description: "manage core config variables",
@@ -354,7 +354,7 @@ export const versionNext = {
                 plugins: ["@oclif/plugin-autocomplete", "@oclif/plugin-commands", "@oclif/plugin-help"],
             },
             readme:
-                '# Swipechain Core - Core\n\n<p align="center">\n    <img src="https://raw.githubusercontent.com/ARKEcosystem/core/master/banner.png" />\n</p>\n\n## Documentation\n\nYou can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.ark.io/guidebook/core/plugins/required/core.html).\n\n## Security\n\nIf you discover a security vulnerability within this package, please send an e-mail to security@swipe.org. All security vulnerabilities will be promptly addressed.\n\n## Credits\n\nThis project exists thanks to all the people who [contribute](../../../../contributors).\n\n## License\n\n[MIT](LICENSE) © [Swipechain](https://swipe.org)\n',
+                '# Swipechain Core - Core\n\n<p align="center">\n    <img src="https://raw.githubusercontent.com/SwipeChain/swipechain-core/master/banner.png" />\n</p>\n\n## Documentation\n\nYou can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.swipechain.org/guidebook/core/plugins/required/core.html).\n\n## Security\n\nIf you discover a security vulnerability within this package, please send an e-mail to security@swipe.org. All security vulnerabilities will be promptly addressed.\n\n## Credits\n\nThis project exists thanks to all the people who [contribute](../../../../contributors).\n\n## License\n\n[MIT](LICENSE) © [Swipechain](https://swipe.org)\n',
             readmeFilename: "README.md",
             _id: "@swipechain/core@2.5.0-next.10",
             _nodeVersion: "10.16.0",
@@ -363,7 +363,7 @@ export const versionNext = {
                 integrity:
                     "sha512-J7hNdeVVDj6QKlFwAtyVathZCGGvwGREDBfVr7zS9h7NG1RJUMRv+VDOQpRKAil6X7DHBFN3KgNqovAuUzoudQ==",
                 shasum: "fb977ee50721ee854e672f7de1410e479e5fcbc9",
-                tarball: "https://registry.npmjs.org/@arkecosystem/core/-/core-2.5.0-next.10.tgz",
+                tarball: "https://registry.npmjs.org/@swipechain/core/-/core-2.5.0-next.10.tgz",
                 fileCount: 192,
                 unpackedSize: 945581,
                 "npm-signature":
@@ -376,8 +376,8 @@ export const versionNext = {
                 },
 
                 {
-                    email: "fx.thoorens@ark.io",
-                    name: "arkio",
+                    email: "fx.thoorens@swipechain.org",
+                    name: "swipechainio",
                 },
 
                 {
@@ -391,7 +391,7 @@ export const versionNext = {
                 },
 
                 {
-                    email: "kristjan@ark.io",
+                    email: "kristjan@swipechain.org",
                     name: "kristjankosic",
                 },
 
@@ -401,7 +401,7 @@ export const versionNext = {
                 },
 
                 {
-                    email: "joshua@ark.io",
+                    email: "joshua@swipechain.org",
                     name: "supaiku",
                 },
             ],

@@ -324,7 +324,7 @@ export const versionNext = {
                 plugins: ["@oclif/plugin-autocomplete", "@oclif/plugin-commands", "@oclif/plugin-help"],
             },
             readme:
-                '# Swipechain Core - Core\n\n<p align="center">\n    <img src="https://raw.githubusercontent.com/ARKEcosystem/core/master/banner.png" />\n</p>\n\n## Documentation\n\nYou can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.ark.io/guidebook/core/plugins/required/core.html).\n\n## Security\n\nIf you discover a security vulnerability within this package, please send an e-mail to security@swipe.org. All security vulnerabilities will be promptly addressed.\n\n## Credits\n\nThis project exists thanks to all the people who [contribute](../../../../contributors).\n\n## License\n\n[MIT](LICENSE) © [Swipechain](https://swipe.org)\n',
+                '# Swipechain Core - Core\n\n<p align="center">\n    <img src="https://raw.githubusercontent.com/SwipeChain/swipechain-core/master/banner.png" />\n</p>\n\n## Documentation\n\nYou can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.swipechain.org/guidebook/core/plugins/required/core.html).\n\n## Security\n\nIf you discover a security vulnerability within this package, please send an e-mail to security@swipe.org. All security vulnerabilities will be promptly addressed.\n\n## Credits\n\nThis project exists thanks to all the people who [contribute](../../../../contributors).\n\n## License\n\n[MIT](LICENSE) © [Swipechain](https://swipe.org)\n',
             readmeFilename: "README.md",
             _id: "@swipechain/core@2.5.0-next.10",
             _nodeVersion: "10.16.0",
@@ -346,8 +346,8 @@ export const versionNext = {
                 },
 
                 {
-                    email: "fx.thoorens@ark.io",
-                    name: "arkio",
+                    email: "fx.thoorens@swipechain.org",
+                    name: "swipechainio",
                 },
 
                 {
@@ -361,7 +361,7 @@ export const versionNext = {
                 },
 
                 {
-                    email: "kristjan@ark.io",
+                    email: "kristjan@swipechain.org",
                     name: "kristjankosic",
                 },
 
@@ -371,7 +371,7 @@ export const versionNext = {
                 },
 
                 {
-                    email: "joshua@ark.io",
+                    email: "joshua@swipechain.org",
                     name: "supaiku",
                 },
             ],

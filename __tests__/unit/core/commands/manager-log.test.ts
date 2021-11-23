@@ -6,6 +6,6 @@ beforeEach(() => (cli = new Console()));
 
 describe("LogCommand", () => {
     it("should throw if the process does not exist", async () => {
-        await expect(cli.execute(Command)).rejects.toThrow('The "ark-manager" process does not exist.');
+        await expect(cli.execute(Command)).rejects.toThrow('The "swipechain-manager" process does not exist.');
     });
 });

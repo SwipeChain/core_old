@@ -2,7 +2,7 @@
     "name": "stub-plugin",
     "version": "1.0.0",
     "main": "dist/index",
-    "arkecosystem": {
+    "swipechain": {
         "core": {
             "required": true,
             "alias": "some-alias",

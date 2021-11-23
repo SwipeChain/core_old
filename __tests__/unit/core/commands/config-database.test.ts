@@ -73,7 +73,7 @@ describe("DatabaseCommand", () => {
             const writeFileSync = jest.spyOn(fs, "writeFileSync").mockImplementation();
 
             // Act
-            await cli.withFlags({ database: "ark_mainnet" }).execute(Command);
+            await cli.withFlags({ database: "swipechain_mainnet" }).execute(Command);
 
             // Assert
             expect(existsSync).toHaveBeenCalledWith(envFile);
@@ -93,12 +93,12 @@ describe("DatabaseCommand", () => {
             const writeFileSync = jest.spyOn(fs, "writeFileSync").mockImplementation();
 
             // Act
-            await cli.withFlags({ username: "ark" }).execute(Command, { flags: { username: "ark" } });
+            await cli.withFlags({ usertoken: "swipechain" }).execute(Command, { flags: { usertoken: "swipechain" } });
 
             // Assert
             expect(existsSync).toHaveBeenCalledWith(envFile);
             expect(parseFileSync).toHaveBeenCalledWith(envFile);
-            expect(writeFileSync).toHaveBeenCalledWith(envFile, "CORE_DB_USERNAME=ark");
+            expect(writeFileSync).toHaveBeenCalledWith(envFile, "CORE_DB_USERNAME=swipechain");
 
             // Reset
             existsSync.mockReset();
@@ -185,7 +185,7 @@ describe("DatabaseCommand", () => {
             const writeFileSync = jest.spyOn(fs, "writeFileSync").mockImplementation();
 
             // Act
-            prompts.inject([undefined, undefined, "ark_mainnet", undefined, undefined, true]);
+            prompts.inject([undefined, undefined, "swipechain_mainnet", undefined, undefined, true]);
 
             await cli.execute(Command);
 
@@ -207,14 +207,14 @@ describe("DatabaseCommand", () => {
             const writeFileSync = jest.spyOn(fs, "writeFileSync").mockImplementation();
 
             // Act
-            prompts.inject([undefined, undefined, undefined, "ark", undefined, true]);
+            prompts.inject([undefined, undefined, undefined, "swipechain", undefined, true]);
 
             await cli.execute(Command);
 
             // Assert
             expect(existsSync).toHaveBeenCalledWith(envFile);
             expect(parseFileSync).toHaveBeenCalledWith(envFile);
-            expect(writeFileSync).toHaveBeenCalledWith(envFile, expect.toInclude("CORE_DB_USERNAME=ark"));
+            expect(writeFileSync).toHaveBeenCalledWith(envFile, expect.toInclude("CORE_DB_USERNAME=swipechain"));
 
             // Reset
             existsSync.mockReset();

@@ -313,7 +313,7 @@ describe("General Tests", () => {
         });
 
         it("should throw if wallet has not enough balance", async () => {
-            // 1 arktoshi short
+            // 1 sxptoshi short
             senderWallet.setBalance(transferTransaction.data.amount.plus(transferTransaction.data.fee).minus(1));
             await expect(handler.throwIfCannotBeApplied(transferTransaction, senderWallet)).rejects.toThrow(
                 InsufficientBalanceError,

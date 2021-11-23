@@ -34,7 +34,7 @@ describe("CLI", () => {
         await cli.execute("./packages/core/dist")
 
         expect(spyOnCheck).toBeCalled();
-        expect(message).toContain(`is not a ark command.`);
+        expect(message).toContain(`is not a swipechain command.`);
         expect(process.exitCode).toEqual(2);
     });
 

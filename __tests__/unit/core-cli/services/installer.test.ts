@@ -31,7 +31,7 @@ describe("Installer.install", () => {
 
         installer.install("@swipechain/core");
 
-        expect(spySync).toHaveBeenCalledWith("yarn global add @arkecosystem/core@latest --force", { shell: true });
+        expect(spySync).toHaveBeenCalledWith("yarn global add @swipechain/core@latest --force", { shell: true });
     });
 
     it("should install specific package when tag is provided", () => {
@@ -44,7 +44,7 @@ describe("Installer.install", () => {
 
         installer.install("@swipechain/core", "3.0.0");
 
-        expect(spySync).toHaveBeenCalledWith("yarn global add @arkecosystem/core@3.0.0 --force", { shell: true });
+        expect(spySync).toHaveBeenCalledWith("yarn global add @swipechain/core@3.0.0 --force", { shell: true });
     });
 
     it("should throw when exit code isn't 0", () => {
@@ -57,7 +57,7 @@ describe("Installer.install", () => {
 
         expect(() => installer.install("@swipechain/core")).toThrow("stderr");
 
-        expect(spySync).toHaveBeenCalledWith("yarn global add @arkecosystem/core@latest --force", { shell: true });
+        expect(spySync).toHaveBeenCalledWith("yarn global add @swipechain/core@latest --force", { shell: true });
     });
 });
 
@@ -74,7 +74,7 @@ describe("Installer.installPeerDependencies", () => {
 
         installer.installPeerDependencies("@swipechain/core", "3.0.0");
 
-        expect(spySync).toHaveBeenCalledWith("yarn info @arkecosystem/core@3.0.0 peerDependencies --json", {
+        expect(spySync).toHaveBeenCalledWith("yarn info @swipechain/core@3.0.0 peerDependencies --json", {
             shell: true,
         });
 
@@ -94,7 +94,7 @@ describe("Installer.installPeerDependencies", () => {
 
         installer.installPeerDependencies("@swipechain/core", "3.0.0");
 
-        expect(spySync).toHaveBeenCalledWith("yarn info @arkecosystem/core@3.0.0 peerDependencies --json", {
+        expect(spySync).toHaveBeenCalledWith("yarn info @swipechain/core@3.0.0 peerDependencies --json", {
             shell: true,
         });
 
@@ -109,7 +109,7 @@ describe("Installer.installPeerDependencies", () => {
 
         expect(() => installer.installPeerDependencies("@swipechain/core")).toThrow("stderr");
 
-        expect(spySync).toHaveBeenCalledWith("yarn info @arkecosystem/core@latest peerDependencies --json", {
+        expect(spySync).toHaveBeenCalledWith("yarn info @swipechain/core@latest peerDependencies --json", {
             shell: true,
         });
     });
@@ -126,7 +126,7 @@ describe("Installer.installRangeLatest", () => {
 
         installer.installRangeLatest("@swipechain/core", "^3.0.0 <3.4.0");
 
-        expect(spySync).toHaveBeenCalledWith("yarn info @arkecosystem/core versions --json", {
+        expect(spySync).toHaveBeenCalledWith("yarn info @swipechain/core versions --json", {
             shell: true,
         });
 
@@ -141,7 +141,7 @@ describe("Installer.installRangeLatest", () => {
 
         expect(() => installer.installRangeLatest("@swipechain/core", "^3.0.0 <3.4.0")).toThrow("stderr");
 
-        expect(spySync).toHaveBeenCalledWith("yarn info @arkecosystem/core versions --json", {
+        expect(spySync).toHaveBeenCalledWith("yarn info @swipechain/core versions --json", {
             shell: true,
         });
     });
@@ -153,10 +153,10 @@ describe("Installer.installRangeLatest", () => {
         });
 
         expect(() => installer.installRangeLatest("@swipechain/core", "^4.0.0 <4.4.0")).toThrow(
-            "No @arkecosystem/core version to satisfy ^4.0.0 <4.4.0",
+            "No @swipechain/core version to satisfy ^4.0.0 <4.4.0",
         );
 
-        expect(spySync).toHaveBeenCalledWith("yarn info @arkecosystem/core versions --json", {
+        expect(spySync).toHaveBeenCalledWith("yarn info @swipechain/core versions --json", {
             shell: true,
         });
     });

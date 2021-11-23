@@ -1,6 +1,6 @@
 import { Generators } from "@packages/core-test-framework/src";
 
-import { ARKTOSHI } from "../../../../packages/crypto/src/constants";
+import { SXPTOSHI } from "../../../../packages/crypto/src/constants";
 import { HtlcLockExpirationType, TransactionType, TransactionTypeGroup } from "../../../../packages/crypto/src/enums";
 import { PublicKey } from "../../../../packages/crypto/src/identities";
 import { Utils } from "../../../../packages/crypto/src/index";
@@ -18,8 +18,8 @@ let transactionSchema: TransactionSchema;
 
 describe("Transfer Transaction", () => {
     const address = "DTRdbaUW3RQQSL5By4G43JVaeHiqfVp9oh";
-    const fee = 1 * ARKTOSHI;
-    const amount = 10 * ARKTOSHI;
+    const fee = 1 * SXPTOSHI;
+    const amount = 10 * SXPTOSHI;
 
     beforeAll(() => {
         transactionSchema = TransactionTypeFactory.get(TransactionType.Transfer).getSchema();
@@ -293,7 +293,7 @@ describe("Delegate Registration Transaction", () => {
     it("should be invalid due to non-zero amount", () => {
         transaction
             .usernameAsset("delegate1")
-            .amount(10 * ARKTOSHI)
+            .amount(10 * SXPTOSHI)
             .sign("passphrase");
 
         const { error } = Ajv.validate(transactionSchema.$id, transaction.getStruct());
@@ -352,7 +352,7 @@ describe("Delegate Registration Transaction", () => {
         transaction = BuilderFactory.transfer();
         transaction
             .recipientId(undefined)
-            .amount(10 * ARKTOSHI)
+            .amount(10 * SXPTOSHI)
             .sign("passphrase");
 
         const { error } = Ajv.validate(transactionSchema.$id, transaction.getStruct());
@@ -400,7 +400,7 @@ describe("Vote Transaction", () => {
     it("should be invalid due to non-zero amount", () => {
         transaction
             .votesAsset([vote])
-            .amount(10 * ARKTOSHI)
+            .amount(10 * SXPTOSHI)
             .sign("passphrase");
 
         const { error } = Ajv.validate(transactionSchema.$id, transaction.getStruct());
@@ -529,7 +529,7 @@ describe("Multi Signature Registration Transaction", () => {
     it("should be invalid due to non-zero amount", () => {
         transaction
             .multiSignatureAsset(multiSignatureAsset)
-            .amount(10 * ARKTOSHI)
+            .amount(10 * SXPTOSHI)
             .sign("passphrase");
         signTransaction(transaction, passphrases);
 
@@ -774,8 +774,8 @@ describe("Multi Payment Transaction", () => {
 
 describe("HTLC Lock Transaction", () => {
     const address = "DTRdbaUW3RQQSL5By4G43JVaeHiqfVp9oh";
-    const fee = 1 * ARKTOSHI;
-    const amount = 10 * ARKTOSHI;
+    const fee = 1 * SXPTOSHI;
+    const amount = 10 * SXPTOSHI;
     const htlcLockAsset = {
         secretHash: "0f128d401958b1b30ad0d10406f47f9489321017b4614e6cb993fc63913c5454",
         expiration: {

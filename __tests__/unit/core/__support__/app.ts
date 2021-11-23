@@ -7,12 +7,12 @@ export const executeCommand = async (command): Promise<void> => {
     });
 
     app.rebind(Container.Identifiers.ApplicationPaths).toConstantValue(
-        app.get<Services.Environment>(Container.Identifiers.Environment).getPaths("ark", "testnet"),
+        app.get<Services.Environment>(Container.Identifiers.Environment).getPaths("swipechain", "testnet"),
     );
 
     const cmd = app.resolve<Commands.Command>(command);
 
-    cmd.register(["--token=ark", "--network=testnet"]);
+    cmd.register(["--token=swipechain", "--network=testnet"]);
 
     await cmd.run();
 };

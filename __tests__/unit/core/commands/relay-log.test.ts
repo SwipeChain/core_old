@@ -18,14 +18,14 @@ afterAll(() => setGracefulCleanup());
 
 describe("LogCommand", () => {
     it("should throw if the process does not exist", async () => {
-        await expect(cli.execute(Command)).rejects.toThrow('The "ark-relay" process does not exist.');
+        await expect(cli.execute(Command)).rejects.toThrow('The "swipechain-relay" process does not exist.');
     });
 
     it("should log to pm_out_log_path", async () => {
         jest.spyOn(cli.app.get(Container.Identifiers.AbortMissingProcess), "execute").mockImplementation();
         jest.spyOn(processManager, "describe").mockReturnValue({
             pid: 1,
-            name: "ark-relay",
+            name: "swipechain-relay",
             pm2_env: {
                 version: "1.0.0",
                 status: "online",
@@ -49,7 +49,7 @@ describe("LogCommand", () => {
         jest.spyOn(cli.app.get(Container.Identifiers.AbortMissingProcess), "execute").mockImplementation();
         jest.spyOn(processManager, "describe").mockReturnValue({
             pid: 1,
-            name: "ark-relay",
+            name: "swipechain-relay",
             pm2_env: {
                 version: "1.0.0",
                 status: "online",

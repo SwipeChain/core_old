@@ -13,14 +13,14 @@ beforeEach(() => {
 
 describe("StatusCommand", () => {
     it("should throw if the process does not exist", async () => {
-        await expect(cli.execute(Command)).rejects.toThrow('The "ark-core" process does not exist.');
+        await expect(cli.execute(Command)).rejects.toThrow('The "swipechain-core" process does not exist.');
     });
 
     it("should render a table with the process information", async () => {
         jest.spyOn(processManager, "missing").mockReturnValue(false);
         jest.spyOn(processManager, "describe").mockReturnValue({
             pid: 1,
-            name: "ark-core",
+            name: "swipechain-core",
             pm2_env: {
                 version: "1.0.0",
                 status: "online",
@@ -37,7 +37,7 @@ describe("StatusCommand", () => {
         expect(message).toIncludeMultiple(["ID", "Name", "Version", "Status", "Uptime", "CPU", "RAM"]);
         expect(message).toIncludeMultiple([
             "1",
-            "ark-core",
+            "swipechain-core",
             "1.0.0",
             "online",
             // "5y 267d 19h 31m 28.1s",

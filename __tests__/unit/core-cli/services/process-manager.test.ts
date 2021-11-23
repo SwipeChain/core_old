@@ -479,11 +479,11 @@ describe("ProcessManager", () => {
             });
 
             // Act...
-            const { failed } = await processManager.trigger("ark-core", "module.name", "params");
+            const { failed } = await processManager.trigger("swipechain-core", "module.name", "params");
 
             // Assert...
             expect(failed).toBeFalse();
-            expect(execa).toHaveBeenCalledWith("pm2 trigger ark-core module.name params", { shell: true });
+            expect(execa).toHaveBeenCalledWith("pm2 trigger swipechain-core module.name params", { shell: true });
         });
     });
 

@@ -116,7 +116,7 @@ class TestWithDependencyTransactionHandler extends TransactionHandler {
 beforeEach(() => {
     app = new Application(new Container());
     app.bind(Identifiers.TransactionHistoryService).toConstantValue(null);
-    app.bind(Identifiers.ApplicationNamespace).toConstantValue("ark-unitnet");
+    app.bind(Identifiers.ApplicationNamespace).toConstantValue("swipechain-unitnet");
     app.bind(Identifiers.LogService).toConstantValue({});
 
     app.bind<Services.Attributes.AttributeSet>(Identifiers.WalletAttributes)

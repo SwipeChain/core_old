@@ -44,10 +44,10 @@ describe("CliManager", () => {
     });
 
     it("should run command with arguments", async () => {
-        await cliManager.runCommand("command_name", "--network:testnet --token=ark");
+        await cliManager.runCommand("command_name", "--network:testnet --token=swipechain");
 
         expect(mockCommand.register).toHaveBeenCalledTimes(1);
-        expect(mockCommand.register).toHaveBeenCalledWith(["command_name", "--network:testnet", "--token=ark"]);
+        expect(mockCommand.register).toHaveBeenCalledWith(["command_name", "--network:testnet", "--token=swipechain"]);
         expect(mockCommand.run).toHaveBeenCalledTimes(1);
     });
 

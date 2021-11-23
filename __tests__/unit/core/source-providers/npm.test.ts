@@ -32,7 +32,7 @@ describe("NPM", () => {
     describe("#exists", () => {
         it("should return true if the file exists", async () => {
             nock(/.*/)
-                .get("/@arkecosystem/utils")
+                .get("/@swipechain/utils")
                 .reply(200, {
                     name: "@swipechain/utils",
                     "dist-tags": {
@@ -43,7 +43,7 @@ describe("NPM", () => {
                             name: "@swipechain/utils",
                             version: "0.9.1",
                             dist: {
-                                tarball: "https://registry.npmjs.org/@arkecosystem/utils/-/utils-0.9.1.tgz",
+                                tarball: "https://registry.npmjs.org/@swipechain/utils/-/utils-0.9.1.tgz",
                             },
                         },
                     },
@@ -60,7 +60,7 @@ describe("NPM", () => {
     describe("#update", () => {
         it("should successfully install the plugin", async () => {
             nock(/.*/)
-                .get("/@arkecosystem/utils")
+                .get("/@swipechain/utils")
                 .reply(200, {
                     name: "@swipechain/utils",
                     "dist-tags": {
@@ -71,14 +71,14 @@ describe("NPM", () => {
                             name: "@swipechain/utils",
                             version: "0.9.1",
                             dist: {
-                                tarball: "https://registry.npmjs.org/@arkecosystem/utils/-/utils-0.9.1.tgz",
+                                tarball: "https://registry.npmjs.org/@swipechain/utils/-/utils-0.9.1.tgz",
                             },
                         },
                     },
                 });
 
             nock(/.*/)
-                .get("/@arkecosystem/utils/-/utils-0.9.1.tgz")
+                .get("/@swipechain/utils/-/utils-0.9.1.tgz")
                 .reply(200, fs.readFileSync(resolve(__dirname, "utils-0.9.1.tgz")));
 
             // Arrange

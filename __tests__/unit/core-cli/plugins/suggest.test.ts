@@ -27,7 +27,7 @@ describe("SuggestCommand", () => {
 
         await cmd.execute({ signature: "topic:command", signatures: ["topic:command1"], bin: "ark" });
 
-        expect(spyWarning).toHaveBeenCalledWith(`${red("topic:command")} is not a ark command.`);
+        expect(spyWarning).toHaveBeenCalledWith(`${red("topic:command")} is not a swipechain command.`);
     });
 
     it("should throw if suggestion is not confirmed", async () => {
@@ -41,6 +41,6 @@ describe("SuggestCommand", () => {
             bin: "ark",
         });
 
-        expect(spyInfo).toHaveBeenCalledWith(`Run ${blue("ark help")} for a list of available commands.`);
+        expect(spyInfo).toHaveBeenCalledWith(`Run ${blue("swipechain help")} for a list of available commands.`);
     });
 });

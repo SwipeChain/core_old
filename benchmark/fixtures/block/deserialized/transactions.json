@@ -2982,7 +2982,7 @@
                 "fee": "10000000",
                 "amount": "200000000",
                 "expiration": 0,
-                "recipientId": "ARKt3Tmo23EYt7cTkrZiaoW9CZ5Z7mKcHm",
+                "recipientId": "SXPt3Tmo23EYt7cTkrZiaoW9CZ5Z7mKcHm",
                 "signature": "3045022100c7c0193c159cbde8a09dead106919732a3b4e30a5cf51617314133454c65e1ef022074b355a40e59075104f694c19d785c2b8ccd3c1ffc0ee17fc8a2c919bbdc3ef2",
                 "vendorField": "Transaction 18",
                 "id": "86fea37d45a620a5920849271c85f1cba4525f93c2f18785986f8d93e2c33152"
@@ -2992,7 +2992,7 @@
             "version": 1,
             "timestamp": 58126418,
             "senderPublicKey": "03d7dfe44e771039334f4712fb95ad355254f674c8f5d286503199157b7bf7c357",
-            "recipientId": "ARKt3Tmo23EYt7cTkrZiaoW9CZ5Z7mKcHm",
+            "recipientId": "SXPt3Tmo23EYt7cTkrZiaoW9CZ5Z7mKcHm",
             "type": 0,
             "vendorField": "Transaction 18",
             "amount": "200000000",

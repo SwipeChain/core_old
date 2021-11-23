@@ -29,7 +29,7 @@ describe("Sandbox", () => {
         const coreOptions: CoreOptions = {
             flags: {
                 network: "dummynet",
-                token: "DARK",
+                token: "DSXP",
             },
         };
 
@@ -54,9 +54,9 @@ describe("Sandbox", () => {
                 rewardAmount: 200000000,
                 pubKeyHash: 23,
                 wif: 186,
-                token: "DARK",
+                token: "DSXP",
                 symbol: "DѦ",
-                explorer: "http://dexplorer.ark.io",
+                explorer: "http://dexplorer.swipechain.org",
                 distribute: true,
             },
         };

@@ -15,7 +15,7 @@ let mockProcessManagerStatus;
 beforeEach(() => {
     mockProcessManagerListItem = {
         pid: 13477,
-        name: "ark-manager",
+        name: "swipechain-manager",
         pm_id: 0,
         pm2_env: {},
         monit: {
@@ -62,7 +62,7 @@ describe("Process:List", () => {
         expect(result).toEqual([
             {
                 pid: 13477,
-                name: "ark-manager",
+                name: "swipechain-manager",
                 pm_id: 0,
                 monit: {
                     memory: 95980,
@@ -85,7 +85,7 @@ describe("Process:List", () => {
         expect(result).toEqual([
             {
                 pid: 13477,
-                name: "ark-manager",
+                name: "swipechain-manager",
                 pm_id: 0,
                 monit: {
                     memory: 95980,

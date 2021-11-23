@@ -1,4 +1,4 @@
-# ARK - Crypto
+# SXP - Crypto
 
 <p align="center">
     <img src="./banner.png?sanitize=true" />
@@ -6,7 +6,7 @@
 
 ## Documentation
 
-You can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.ark.io/sdk/cryptography/usage.html).
+You can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.swipechain.org/sdk/cryptography/usage.html).
 
 ## Security
 
