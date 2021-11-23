@@ -1,0 +1,124 @@
+{
+    "core": {
+        "plugins": [
+            {
+                "package": "@swipechain/core-logger-pino"
+            },
+            {
+                "package": "@swipechain/core-state"
+            },
+            {
+                "package": "@swipechain/core-database"
+            },
+            {
+                "package": "@swipechain/core-transactions"
+            },
+            {
+                "package": "@swipechain/core-magistrate-transactions"
+            },
+            {
+                "package": "@swipechain/core-transaction-pool"
+            },
+            {
+                "package": "@swipechain/core-p2p"
+            },
+            {
+                "package": "@swipechain/core-blockchain"
+            },
+            {
+                "package": "@swipechain/core-api"
+            },
+            {
+                "package": "@swipechain/core-magistrate-api"
+            },
+            {
+                "package": "@swipechain/core-webhooks"
+            },
+            {
+                "package": "@swipechain/core-forger"
+            }
+        ]
+    },
+    "relay": {
+        "plugins": [
+            {
+                "package": "@swipechain/core-logger-pino"
+            },
+            {
+                "package": "@swipechain/core-state"
+            },
+            {
+                "package": "@swipechain/core-database"
+            },
+            {
+                "package": "@swipechain/core-transactions"
+            },
+            {
+                "package": "@swipechain/core-magistrate-transactions"
+            },
+            {
+                "package": "@swipechain/core-transaction-pool"
+            },
+            {
+                "package": "@swipechain/core-p2p"
+            },
+            {
+                "package": "@swipechain/core-blockchain"
+            },
+            {
+                "package": "@swipechain/core-api"
+            },
+            {
+                "package": "@swipechain/core-magistrate-api"
+            },
+            {
+                "package": "@swipechain/core-webhooks"
+            }
+        ]
+    },
+    "forger": {
+        "plugins": [
+            {
+                "package": "@swipechain/core-logger-pino"
+            },
+            {
+                "package": "@swipechain/core-transactions"
+            },
+            {
+                "package": "@swipechain/core-magistrate-transactions"
+            },
+            {
+                "package": "@swipechain/core-forger"
+            }
+        ]
+    },
+    "snapshot": {
+        "plugins": [
+            {
+                "package": "@swipechain/core-logger-pino"
+            },
+            {
+                "package": "@swipechain/core-database"
+            },
+            {
+                "package": "@swipechain/core-snapshots"
+            }
+        ]
+    },
+    "manager": {
+        "plugins": [
+            {
+                "package": "@swipechain/core-logger-pino"
+            },
+            {
+                "package": "@swipechain/core-database"
+            },
+            {
+                "package": "@swipechain/core-snapshots"
+            },
+            {
+                "package": "@swipechain/core-manager"
+            }
+        ]
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "name": "@swipechain/core-database",
+    "version": "3.1.6",
+    "description": "Database Interface for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipechain.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6",
+        "@swipechain/utils": "^1.0.1",
+        "dayjs": "^1.8.17",
+        "joi": "^17.3.0",
+        "pg": "^8.2.1",
+        "reflect-metadata": "^0.1.13",
+        "typeorm": "0.2.25"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

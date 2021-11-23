@@ -1,0 +1,68 @@
+{
+    "name": "@swipechain/core-p2p",
+    "version": "3.1.6",
+    "description": "P2P API for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipechain.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "pbjs": "../../node_modules/protobufjs/cli/bin/pbjs -t static-module -w commonjs src/socket-server/codecs/proto/*.proto -o src/socket-server/codecs/proto/protos.js",
+        "pbts": "../../node_modules/protobufjs/cli/bin/pbts src/socket-server/codecs/proto/protos.js -o src/socket-server/codecs/proto/protos.d.ts",
+        "build:proto": "yarn pbjs && yarn pbts",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@hapi/boom": "^9.0.0",
+        "@hapi/bounce": "2.x.x",
+        "@hapi/hapi": "^20.0.3",
+        "@hapi/hoek": "9.x.x",
+        "@hapi/sntp": "^4.0.0",
+        "@hapi/teamwork": "5.x.x",
+        "@swipechain/core-database": "^3.1.6",
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/core-state": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6",
+        "dayjs": "^1.8.17",
+        "delay": "^4.3.0",
+        "ip": "^1.1.5",
+        "ipaddr.js": "^2.0.0",
+        "joi": "^17.3.0",
+        "pluralize": "^8.0.0",
+        "pretty-ms": "^7.0.0",
+        "protobufjs": "~6.10.1",
+        "rate-limiter-flexible": "^1.1.0",
+        "semver": "^6.3.0",
+        "ws": "7.x"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^5.4.0",
+        "@types/fs-extra": "^8.0.1",
+        "@types/hapi__sntp": "^3.1.0",
+        "@types/ip": "^1.1.0",
+        "@types/semver": "^6.2.0"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "swipechain": {
+        "core": {
+            "alias": "p2p"
+        }
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

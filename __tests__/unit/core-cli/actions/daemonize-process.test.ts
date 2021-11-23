@@ -1,0 +1,352 @@
+import { Container } from "@swipechain/core-cli";
+import { Console } from "@swipechain/core-test-framework";
+import { DaemonizeProcess } from "@packages/core-cli/src/actions";
+import os from "os";
+
+let cli;
+let processManager;
+let action;
+
+beforeEach(() => {
+    cli = new Console();
+    processManager = cli.app.get(Container.Identifiers.ProcessManager);
+
+    // Bind from src instead of dist to collect coverage.
+    cli.app.rebind(Container.Identifiers.DaemonizeProcess).to(DaemonizeProcess).inSingletonScope();
+    action = cli.app.get(Container.Identifiers.DaemonizeProcess);
+});
+
+describe("DaemonizeProcess", () => {
+    it("should throw if the process has entered an unknown state", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(true);
+
+        expect(() =>
+            action.execute(
+                {
+                    name: "swipechain-core",
+                    script: "script",
+                    args: "core:run --daemon",
+                },
+                {},
+            ),
+        ).toThrow('The "swipechain-core" process has entered an unknown state.');
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+
+        has.mockClear();
+        isUnknown.mockClear();
+    });
+
+    it("should throw if the process is running", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(true);
+
+        expect(() =>
+            action.execute(
+                {
+                    name: "swipechain-core",
+                    script: "script",
+                    args: "core:run --daemon",
+                },
+                {},
+            ),
+        ).toThrow('The "swipechain-core" process is already running.');
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+    });
+
+    it("should continue execution if the process does not exist", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(false);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(false);
+
+        action.execute(
+            {
+                name: "swipechain-core",
+                script: "script",
+                args: "core:run --daemon",
+            },
+            {},
+        );
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).not.toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).not.toHaveBeenCalledWith("swipechain-core");
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+    });
+
+    it("should run with the [no-daemon] flag if the daemon flag is not set", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(false);
+        const freemem = jest.spyOn(os, "freemem").mockReturnValue(99999999999);
+        const totalmem = jest.spyOn(os, "totalmem").mockReturnValue(99999999999);
+        const start = jest.spyOn(processManager, "start").mockImplementation(undefined);
+
+        action.execute(
+            {
+                name: "swipechain-core",
+                script: "script",
+                args: "core:run --daemon",
+            },
+            {},
+        );
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
+        expect(freemem).toHaveBeenCalled();
+        expect(totalmem).toHaveBeenCalled();
+        expect(start).toHaveBeenCalledWith(
+            {
+                args: "core:run --daemon",
+                env: { CORE_ENV: undefined, NODE_ENV: "production" },
+                name: "swipechain-core",
+                node_args: undefined,
+                script: "script",
+            },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
+        );
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+        freemem.mockClear();
+        totalmem.mockClear();
+        start.mockClear();
+    });
+
+    it("should run with the [no-daemon] flag if the daemon flag is false", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(false);
+        const freemem = jest.spyOn(os, "freemem").mockReturnValue(99999999999);
+        const totalmem = jest.spyOn(os, "totalmem").mockReturnValue(99999999999);
+        const start = jest.spyOn(processManager, "start").mockImplementation(undefined);
+
+        action.execute(
+            {
+                name: "swipechain-core",
+                script: "script",
+                args: "core:run --daemon",
+            },
+            { daemon: false },
+        );
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
+        expect(freemem).toHaveBeenCalled();
+        expect(totalmem).toHaveBeenCalled();
+        expect(start).toHaveBeenCalledWith(
+            {
+                args: "core:run --daemon",
+                env: { CORE_ENV: undefined, NODE_ENV: "production" },
+                name: "swipechain-core",
+                node_args: undefined,
+                script: "script",
+            },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
+        );
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+        freemem.mockClear();
+        totalmem.mockClear();
+        start.mockClear();
+    });
+
+    it("should run without the [--no-daemon] flag if the daemon flag is true", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(false);
+        const freemem = jest.spyOn(os, "freemem").mockReturnValue(99999999999);
+        const totalmem = jest.spyOn(os, "totalmem").mockReturnValue(99999999999);
+        const start = jest.spyOn(processManager, "start").mockImplementation(undefined);
+
+        action.execute(
+            {
+                name: "swipechain-core",
+                script: "script",
+                args: "core:run --daemon",
+            },
+            { daemon: true },
+        );
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
+        expect(freemem).toHaveBeenCalled();
+        expect(totalmem).toHaveBeenCalled();
+        expect(start).toHaveBeenCalledWith(
+            {
+                args: "core:run --daemon",
+                env: { CORE_ENV: undefined, NODE_ENV: "production" },
+                name: "swipechain-core",
+                node_args: undefined,
+                script: "script",
+            },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core" },
+        );
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+        freemem.mockClear();
+        totalmem.mockClear();
+        start.mockClear();
+    });
+
+    it("should run with potato settings", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(false);
+        const freemem = jest.spyOn(os, "freemem").mockReturnValue(1);
+        const totalmem = jest.spyOn(os, "totalmem").mockReturnValue(1);
+        const start = jest.spyOn(processManager, "start").mockImplementation(undefined);
+
+        action.execute(
+            {
+                name: "swipechain-core",
+                script: "script",
+                args: "core:run --daemon",
+            },
+            {},
+        );
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
+        expect(freemem).toHaveBeenCalled();
+        expect(totalmem).toHaveBeenCalled();
+        expect(start).toHaveBeenCalledWith(
+            {
+                args: "core:run --daemon",
+                env: {
+                    CORE_ENV: undefined,
+                    NODE_ENV: "production",
+                },
+                name: "swipechain-core",
+                node_args: {
+                    max_old_space_size: 500,
+                },
+                script: "script",
+            },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
+        );
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+        freemem.mockClear();
+        totalmem.mockClear();
+        start.mockClear();
+    });
+
+    it("should throw if an unknown error occurs", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(false);
+        const freemem = jest.spyOn(os, "freemem").mockReturnValue(99999999999);
+        const totalmem = jest.spyOn(os, "totalmem").mockReturnValue(99999999999);
+        const start = jest.spyOn(processManager, "start").mockImplementation(() => {
+            throw new Error("unexpected error");
+        });
+
+        expect(() =>
+            action.execute(
+                {
+                    name: "swipechain-core",
+                    script: "script",
+                    args: "core:run --daemon",
+                },
+                {},
+            ),
+        ).toThrow("unexpected error");
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
+        expect(freemem).toHaveBeenCalled();
+        expect(totalmem).toHaveBeenCalled();
+        expect(start).toHaveBeenCalledWith(
+            {
+                args: "core:run --daemon",
+                env: { CORE_ENV: undefined, NODE_ENV: "production" },
+                name: "swipechain-core",
+                node_args: undefined,
+                script: "script",
+            },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
+        );
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+        freemem.mockClear();
+        totalmem.mockClear();
+        start.mockClear();
+    });
+
+    it("should throw if an unknown error occurs (with stdrr)", () => {
+        const has = jest.spyOn(processManager, "has").mockReturnValue(true);
+        const isUnknown = jest.spyOn(processManager, "isUnknown").mockReturnValue(false);
+        const isOnline = jest.spyOn(processManager, "isOnline").mockReturnValue(false);
+        const freemem = jest.spyOn(os, "freemem").mockReturnValue(99999999999);
+        const totalmem = jest.spyOn(os, "totalmem").mockReturnValue(99999999999);
+        const start = jest.spyOn(processManager, "start").mockImplementation(() => {
+            const error: Error = new Error("hello world");
+            // @ts-ignore
+            error.stderr = "unexpected error";
+
+            throw error;
+        });
+
+        expect(() =>
+            action.execute(
+                {
+                    name: "swipechain-core",
+                    script: "script",
+                    args: "core:run --daemon",
+                },
+                {},
+            ),
+        ).toThrow("hello world: unexpected error");
+
+        expect(has).toHaveBeenCalledWith("swipechain-core");
+        expect(isUnknown).toHaveBeenCalledWith("swipechain-core");
+        expect(isOnline).toHaveBeenCalledWith("swipechain-core");
+        expect(freemem).toHaveBeenCalled();
+        expect(totalmem).toHaveBeenCalled();
+        expect(start).toHaveBeenCalledWith(
+            {
+                args: "core:run --daemon",
+                env: { CORE_ENV: undefined, NODE_ENV: "production" },
+                name: "swipechain-core",
+                node_args: undefined,
+                script: "script",
+            },
+            { "kill-timeout": 30000, "max-restarts": 5, name: "swipechain-core", "no-daemon": true },
+        );
+
+        has.mockClear();
+        isUnknown.mockClear();
+        isOnline.mockClear();
+        freemem.mockClear();
+        totalmem.mockClear();
+        start.mockClear();
+    });
+});

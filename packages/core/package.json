@@ -1,0 +1,86 @@
+{
+    "name": "@swipechain/core",
+    "version": "3.1.6",
+    "description": "Core of the Swipechain Blockchain",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipechain.org>"
+    ],
+    "files": [
+        "/bin",
+        "/dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "bin": {
+        "swipechain": "./bin/run"
+    },
+    "scripts": {
+        "swipechain": "node ./bin/run",
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "debug:forger": "node --inspect-brk ./bin/run forger:run",
+        "debug:relay": "node --inspect-brk ./bin/run relay:run",
+        "debug:core": "node --inspect-brk ./bin/run core:run",
+        "core:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain core:run",
+        "core:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain core:run",
+        "core:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain core:run --env=test",
+        "relay:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain relay:run",
+        "relay:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain relay:run",
+        "relay:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain relay:run --env=test",
+        "forger:devnet": "cross-env CORE_PATH_CONFIG=./bin/config/devnet yarn swipechain forger:run",
+        "forger:mainnet": "cross-env CORE_PATH_CONFIG=./bin/config/mainnet yarn swipechain forger:run",
+        "forger:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain forger:run --env=test",
+        "full:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain core:run --networkStart --env=test",
+        "manager:testnet": "cross-env CORE_PATH_CONFIG=./bin/config/testnet yarn swipechain manager:run",
+        "prepublishOnly": "yarn build"
+    },
+    "dependencies": {
+        "@swipechain/core-api": "^3.1.6",
+        "@swipechain/core-blockchain": "^3.1.6",
+        "@swipechain/core-cli": "^3.1.6",
+        "@swipechain/core-database": "^3.1.6",
+        "@swipechain/core-forger": "^3.1.6",
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/core-logger-pino": "^3.1.6",
+        "@swipechain/core-magistrate-api": "^3.1.6",
+        "@swipechain/core-magistrate-transactions": "^3.1.6",
+        "@swipechain/core-p2p": "^3.1.6",
+        "@swipechain/core-snapshots": "^3.1.6",
+        "@swipechain/core-state": "^3.1.6",
+        "@swipechain/core-transaction-pool": "^3.1.6",
+        "@swipechain/core-transactions": "^3.1.6",
+        "@swipechain/core-webhooks": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6",
+        "@swipechain/utils": "^1.0.1",
+        "argon2": "^0.26.2",
+        "bip39": "^3.0.2",
+        "boxen": "^4.2.0",
+        "dayjs": "^1.8.35",
+        "env-paths": "^2.2.0",
+        "envfile": "^5.0.0",
+        "execa": "^3.4.0",
+        "fs-extra": "^8.1.0",
+        "got": "^11.8.1",
+        "joi": "^17.3.0",
+        "kleur": "^4.1.1",
+        "ngrok": "^3.2.5",
+        "prompts": "^2.4.0",
+        "tar": "^6.0.0",
+        "type-fest": "^0.16.0",
+        "wif": "^2.0.6"
+    },
+    "peerDependencies": {
+        "pm2": "4.5.0"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

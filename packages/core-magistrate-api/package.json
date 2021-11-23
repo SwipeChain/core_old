@@ -1,0 +1,49 @@
+{
+    "name": "@swipechain/core-magistrate-api",
+    "version": "3.1.6",
+    "description": "Magistrate API for Swipechain Core",
+    "license": "MIT",
+    "contributors": [
+        "Swipechain <community@swipechain.org>"
+    ],
+    "files": [
+        "dist"
+    ],
+    "main": "dist/index",
+    "types": "dist/index",
+    "scripts": {
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "prepublishOnly": "yarn build",
+        "pretest": "bash ../../scripts/pre-test.sh"
+    },
+    "dependencies": {
+        "@hapi/boom": "^9.0.0",
+        "@hapi/hapi": "^20.0.3",
+        "@swipechain/core-api": "^3.1.6",
+        "@swipechain/core-kernel": "^3.1.6",
+        "@swipechain/core-magistrate-crypto": "^3.1.6",
+        "@swipechain/core-magistrate-transactions": "^3.1.6",
+        "@swipechain/crypto": "^3.1.6",
+        "joi": "^17.3.0"
+    },
+    "devDependencies": {
+        "@types/hapi__boom": "^7.4.1",
+        "@types/hapi__joi": "^17.0.0"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "swipechain": {
+        "core": {
+            "alias": "magistrate-api"
+        }
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}

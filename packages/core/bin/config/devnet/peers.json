@@ -1,0 +1,24 @@
+{
+    "list": [
+        {
+            "ip": "3.9.91.207",
+            "port": 4002
+        }, {
+            "ip": "18.169.85.75",
+            "port": 4002
+        }, {
+            "ip": "18.133.107.115",
+            "port": 4002
+        }, {
+            "ip": "18.133.51.63",
+            "port": 4002
+        }, {
+            "ip": "3.8.80.241",
+            "port": 4002
+        }, {
+            "ip": "35.178.228.152",
+            "port": 4002
+        }
+    ],
+    "sources": ["https://raw.githubusercontent.com/SwipeChain/swipechain-peers/main/devnet.json"]
+}

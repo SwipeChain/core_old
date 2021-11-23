@@ -1,0 +1,61 @@
+{
+    "name": "@swipechain/core-kernel",
+    "description": "Kernel of Swipechain Core",
+    "version": "3.1.6",
+    "contributors": [
+        "Swipechain <community@swipechain.org>"
+    ],
+    "license": "MIT",
+    "main": "dist/index",
+    "types": "dist/index",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "prepublishOnly": "yarn build",
+        "pretest": "yarn lint && yarn build",
+        "compile": "node ../../node_modules/typescript/bin/tsc",
+        "build": "yarn clean && yarn compile",
+        "build:watch": "yarn clean && yarn compile -w",
+        "build:docs": "../../node_modules/typedoc/bin/typedoc --out docs src",
+        "clean": "rimraf dist"
+    },
+    "dependencies": {
+        "@pm2/io": "^4.3.5",
+        "@swipechain/crypto": "^3.1.6",
+        "@swipechain/utils": "^1.0.2",
+        "chalk": "^4.0.0",
+        "cron": "^1.7.2",
+        "dayjs": "^1.8.17",
+        "deepmerge": "^4.2.2",
+        "env-paths": "^2.2.0",
+        "fs-extra": "^8.1.0",
+        "functional-red-black-tree": "^1.0.1",
+        "glob": "^7.1.7",
+        "import-fresh": "^3.2.1",
+        "inversify": "^5.0.1",
+        "ipaddr.js": "^2.0.0",
+        "joi": "^17.3.0",
+        "log-process-errors": "^5.0.3",
+        "nanomatch": "^1.2.13",
+        "nsfw": "^2.0.0",
+        "reflect-metadata": "^0.1.13",
+        "semver": "^6.3.0",
+        "type-fest": "^0.16.0"
+    },
+    "devDependencies": {
+        "@types/cron": "^1.7.1",
+        "@types/fs-extra": "^8.0.1",
+        "@types/functional-red-black-tree": "^1.0.0",
+        "@types/got": "^9.6.9",
+        "@types/log-process-errors": "^4.1.0",
+        "@types/semver": "^6.2.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "engines": {
+        "node": ">=10.x"
+    },
+    "gitHead": "84c8ad86d22ff0b6df121aec2a5863302bf6013c"
+}
