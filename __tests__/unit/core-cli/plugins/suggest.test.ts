@@ -13,11 +13,11 @@ beforeEach(() => {
 
 describe("SuggestCommand", () => {
     it("should immediately return if there is no signature", async () => {
-        expect(await cmd.execute({ signature: "", signatures: [], bin: "ark" })).toBeUndefined();
+        expect(await cmd.execute({ signature: "", signatures: [], bin: "swipechain" })).toBeUndefined();
     });
 
     it("should immediately return if there are no signatures", async () => {
-        expect(await cmd.execute({ signature: "topic:command", signatures: [], bin: "ark" })).toBeUndefined();
+        expect(await cmd.execute({ signature: "topic:command", signatures: [], bin: "swipechain" })).toBeUndefined();
     });
 
     it("should update the bin help if a topic is found", async () => {
@@ -25,7 +25,7 @@ describe("SuggestCommand", () => {
 
         prompts.inject([true]);
 
-        await cmd.execute({ signature: "topic:command", signatures: ["topic:command1"], bin: "ark" });
+        await cmd.execute({ signature: "topic:command", signatures: ["topic:command1"], bin: "swipechain" });
 
         expect(spyWarning).toHaveBeenCalledWith(`${red("topic:command")} is not a swipechain command.`);
     });
@@ -38,7 +38,7 @@ describe("SuggestCommand", () => {
         await cmd.execute({
             signature: "topic:command",
             signatures: ["topic:command1"],
-            bin: "ark",
+            bin: "swipechain",
         });
 
         expect(spyInfo).toHaveBeenCalledWith(`Run ${blue("swipechain help")} for a list of available commands.`);

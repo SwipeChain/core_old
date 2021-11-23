@@ -114,7 +114,7 @@ describe("CLI", () => {
 
             expect(spyOnDiscoverNetwork).toHaveBeenCalled();
             expect(spyOnDiscoverPlugins).toHaveBeenCalledWith(
-                join(envPaths("ark", { suffix: "core" }).data, "testnet", "plugins"),
+                join(envPaths("swipechain", { suffix: "core" }).data, "testnet", "plugins"),
             );
         });
     });

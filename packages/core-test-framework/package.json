@@ -4,7 +4,7 @@
     "description": "Test Framework for Swipechain Core",
     "license": "MIT",
     "contributors": [
-        "Swipechain <community@swipe.org>"
+        "Swipechain <community@swipechain.org>"
     ],
     "files": [
         "dist"

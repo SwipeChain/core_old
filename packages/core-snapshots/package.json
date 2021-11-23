@@ -4,7 +4,7 @@
     "description": "Provides live local streamed snapshots functionality for Swipechain Core",
     "license": "MIT",
     "contributors": [
-        "Swipechain <community@swipe.org>"
+        "Swipechain <community@swipechain.org>"
     ],
     "files": [
         "dist"

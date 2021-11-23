@@ -4,7 +4,7 @@
     "description": "Core of the Swipe Blockchain",
     "license": "MIT",
     "contributors": [
-        "Swipechain <community@swipe.org>"
+        "Swipechain <community@swipechain.org>"
     ],
     "files": [
         "/dist"

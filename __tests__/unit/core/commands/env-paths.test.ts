@@ -12,7 +12,7 @@ describe("PathsCommand", () => {
 
         await cli.execute(Command);
 
-        const paths: Paths = envPaths("ark", { suffix: "core" });
+        const paths: Paths = envPaths("swipechain", { suffix: "core" });
 
         expect(message).toContain(paths.cache);
         expect(message).toContain(paths.config);

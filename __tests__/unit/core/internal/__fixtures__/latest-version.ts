@@ -15,7 +15,7 @@ export const versionLatest = {
             contributors: [
                 {
                     name: "Swipechain",
-                    email: "community@swipe.org",
+                    email: "community@swipechain.org",
                 },
             ],
             main: "dist/index",
@@ -186,7 +186,7 @@ export const versionNext = {
             contributors: [
                 {
                     name: "Swipechain",
-                    email: "community@swipe.org",
+                    email: "community@swipechain.org",
                 },
             ],
             main: "dist/index",
@@ -324,7 +324,7 @@ export const versionNext = {
                 plugins: ["@oclif/plugin-autocomplete", "@oclif/plugin-commands", "@oclif/plugin-help"],
             },
             readme:
-                '# Swipechain Core - Core\n\n<p align="center">\n    <img src="https://raw.githubusercontent.com/SwipeChain/swipechain-core/master/banner.png" />\n</p>\n\n## Documentation\n\nYou can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.swipechain.org/guidebook/core/plugins/required/core.html).\n\n## Security\n\nIf you discover a security vulnerability within this package, please send an e-mail to security@swipe.org. All security vulnerabilities will be promptly addressed.\n\n## Credits\n\nThis project exists thanks to all the people who [contribute](../../../../contributors).\n\n## License\n\n[MIT](LICENSE) © [Swipechain](https://swipe.org)\n',
+                '# Swipechain Core - Core\n\n<p align="center">\n    <img src="https://raw.githubusercontent.com/SwipeChain/swipechain-core/master/banner.png" />\n</p>\n\n## Documentation\n\nYou can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.swipechain.org/guidebook/core/plugins/required/core.html).\n\n## Security\n\nIf you discover a security vulnerability within this package, please send an e-mail to security@swipechain.org. All security vulnerabilities will be promptly addressed.\n\n## Credits\n\nThis project exists thanks to all the people who [contribute](../../../../contributors).\n\n## License\n\n[MIT](LICENSE) © [Swipechain](https://swipe.org)\n',
             readmeFilename: "README.md",
             _id: "@swipechain/core@2.5.0-next.10",
             _nodeVersion: "10.16.0",

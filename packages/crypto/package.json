@@ -4,7 +4,7 @@
     "description": "Crypto utilities for the Swipechain Blockchain",
     "license": "MIT",
     "contributors": [
-        "Swipechain <community@swipe.org>"
+        "Swipechain <community@swipechain.org>"
     ],
     "files": [
         "dist"

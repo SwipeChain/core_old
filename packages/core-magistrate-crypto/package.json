@@ -4,7 +4,7 @@
     "description": "Swipechain transactions for businesses and bridgechains",
     "license": "MIT",
     "contributors": [
-        "Swipechain <community@swipe.org>"
+        "Swipechain <community@swipechain.org>"
     ],
     "files": [
         "dist"

@@ -4,7 +4,7 @@
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to security@swipe.org. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to security@swipechain.org. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 

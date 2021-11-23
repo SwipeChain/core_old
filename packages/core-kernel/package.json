@@ -3,7 +3,7 @@
     "description": "Kernel of Swipechain Core",
     "version": "3.1.0",
     "contributors": [
-        "Swipechain <community@swipe.org>"
+        "Swipechain <community@swipechain.org>"
     ],
     "license": "MIT",
     "main": "dist/index",

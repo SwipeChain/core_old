@@ -52,7 +52,7 @@ describe("ActionFactory", () => {
     });
 
     it("should get core paths", () => {
-        const paths = envPaths("ark", { suffix: "core" });
+        const paths = envPaths("swipechain", { suffix: "core" });
 
         app.bind(Container.Identifiers.ApplicationPaths).toConstantValue(paths);
 
@@ -64,7 +64,7 @@ describe("ActionFactory", () => {
     });
 
     it("should get console paths with a file", () => {
-        const paths = envPaths("ark", { suffix: "core" });
+        const paths = envPaths("swipechain", { suffix: "core" });
 
         app.bind(Container.Identifiers.ApplicationPaths).toConstantValue(paths);
 
@@ -76,7 +76,7 @@ describe("ActionFactory", () => {
     });
 
     it("should get console paths", () => {
-        const paths = envPaths("ark", { suffix: "core" });
+        const paths = envPaths("swipechain", { suffix: "core" });
 
         app.bind(Container.Identifiers.ConsolePaths).toConstantValue(paths);
 
@@ -88,7 +88,7 @@ describe("ActionFactory", () => {
     });
 
     it("should get console paths with a file", () => {
-        const paths = envPaths("ark", { suffix: "core" });
+        const paths = envPaths("swipechain", { suffix: "core" });
 
         app.bind(Container.Identifiers.ConsolePaths).toConstantValue(paths);
 

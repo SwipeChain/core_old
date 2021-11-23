@@ -4,7 +4,7 @@
     "description": "Magistrate API for Swipechain Core",
     "license": "MIT",
     "contributors": [
-        "Swipechain <community@swipe.org>"
+        "Swipechain <community@swipechain.org>"
     ],
     "files": [
         "dist"

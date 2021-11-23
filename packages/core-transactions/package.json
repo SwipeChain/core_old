@@ -4,7 +4,7 @@
     "description": "Transaction Services for Swipechain Core",
     "license": "MIT",
     "contributors": [
-        "Swipechian <community@swipe.org>"
+        "Swipechian <community@swipechain.org>"
     ],
     "files": [
         "dist"
