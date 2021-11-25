@@ -25,4 +25,5 @@ This project exists thanks to all the people who [contribute](../../contributors
 
 ## License
 
+[MIT](LICENSE) © [Ark Ecosystem](https://ark.io)
 [MIT](LICENSE) © [Swipechain](https://swipechain.org)
