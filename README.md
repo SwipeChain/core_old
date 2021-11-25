@@ -2,6 +2,8 @@
 
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
+> Lead Maintainer: [Erwann Gentric](https://github.com/air1one)
+
 ## Introduction
 
 > This repository contains all plugins that make up the Swipechain Core.
